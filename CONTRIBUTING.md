@@ -4,7 +4,7 @@
 
 ### Branches
 
-The "master" branch is the stable released version. The "dev" branch is where the development happens.
+The "main" branch is the stable released version. The "dev" branch is where the development happens.
 
 * Base your work on the "dev" branch
 * Target the "dev" branch for your PR
