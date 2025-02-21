@@ -1,7 +1,7 @@
 ---
 
 name: Bug report
-about: If something isn't working as expected.
+about: A clear and concise description of what the bug is.
 
 ---
 
@@ -11,10 +11,10 @@ about: If something isn't working as expected.
 <!-- Please describe precisely your problem here. -->
 
 # Steps to reproduce
-
 <!-- A reproducible bug is always much easier to fix! -->
 
 # Information
+<!-- A demo/screenshot/animated gif of the problem can also be helpful. Package.json version, tag, or git commit information. -->
 
 - Version of apidoc:
 - Operating system (e.g. GNU+Linux/MacOS/Windows):

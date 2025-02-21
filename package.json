@@ -1,19 +1,24 @@
 {
-  "name": "apidoc",
+  "name": "@cdcabrera/apidoc",
   "version": "1.2.0",
   "description": "RESTful web API Documentation Generator",
   "author": "Peter Rottmann <rottmann@inveris.de>",
+  "maintainers": ["cdcabrera"],
   "license": "MIT",
-  "preferGlobal": true,
-  "bin": "bin/apidoc",
+  "publishConfig": {
+    "provenance": true
+  },
+  "bin": {
+    "apidoc": "bin/apidoc"
+  },
   "main": "./lib/index.js",
   "homepage": "https://apidocjs.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/apidoc/apidoc.git"
+    "url": "https://github.com/cdcabrera/apidoc.git"
   },
   "bugs": {
-    "url": "https://github.com/apidoc/apidoc/issues"
+    "url": "https://github.com/cdcabrera/apidoc/issues"
   },
   "scripts": {
     "build-example": "./bin/apidoc -v -i example/ -o /tmp/apidoc-output",

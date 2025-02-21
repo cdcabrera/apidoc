@@ -1,15 +1,21 @@
-# Important note
-
-This project is currently not active maintained!
-See discussion https://github.com/apidoc/apidoc/issues/1436
-
 # apiDoc
-
 apiDoc creates a documentation from API descriptions in your source code.
 
-![validate](https://github.com/apidoc/apidoc/workflows/validate/badge.svg)
-[![NPM version](https://badge.fury.io/js/apidoc.svg)](http://badge.fury.io/js/apidoc)
-[![Join the chat at https://gitter.im/apidoc/talk](https://badges.gitter.im/apidoc/talk.svg)](https://gitter.im/apidoc/talk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+## Important note
+
+For the foreseeable future, maintaining the project build.
+
+NPM released under [@cdcabrera/apidoc](https://www.npmjs.com/package/@cdcabrera/apidoc)
+
+> Having options for handling specs is good, especially an easy to implement open alternative.
+>
+> The focus of this maintenance will be dependency updates and NodeJS compatibility on the main `apidoc` package. May continue refactoring aspects of the codebase and consolidating, but then again maybe not.
+
+> ~~This project is currently not active maintained!
+See discussion https://github.com/apidoc/apidoc/issues/1436~~
+
+[![validate](https://github.com/cdcabrera/apidoc/actions/workflows/validating.yml/badge.svg)](https://github.com/cdcabrera/apidoc/actions/workflows/validating.yml)
+[![License](https://img.shields.io/github/license/cdcabrera/apidoc)](https://github.com/cdcabrera/apidoc/blob/main/LICENSE)
 
 ### Documentation: [apidocjs.com](http://apidocjs.com)
 
@@ -18,7 +24,7 @@ apiDoc creates a documentation from API descriptions in your source code.
 ## Installation
 
 ```bash
-$ npm install -g apidoc
+$ npm install -g @cdcabrera/apidoc
 ```
 
 ## Usage
@@ -180,7 +186,7 @@ Please [create a new issue](https://github.com/apidoc/apidoc/issues/new/choose) 
 
 ## Contributing
 
-apiDoc is a collaborative project. Pull requests are welcome. Please see the [CONTRIBUTING](https://github.com/apidoc/apidoc/blob/master/CONTRIBUTING.md) file.
+apiDoc is a collaborative project. Pull requests are welcome. Please see the [CONTRIBUTING](./CONTRIBUTING.md) file.
 
 ## Build tools
 
