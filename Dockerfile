@@ -1,13 +1,10 @@
-# Dockerfile for apidoc
-FROM node:16-alpine
+# Containerfile for apidoc
+FROM node:20-alpine
 
 LABEL org.label-schema.name="apidoc" \
-    org.label-schema.description="apidoc Docker image" \
+    org.label-schema.description="apidoc container image" \
     org.label-schema.url="http://apidocjs.com/" \
-    org.label-schema.vcs-url="https://github.com/apidoc/apidoc" \
-    org.label-schema.maintainer="rottmann@inveris.de" \
-    org.label-schema.schema-version="1.0" \
-    org.label-schema.docker.cmd="docker run --rm -v $(pwd):/home/node/apidoc apidoc/apidoc -o outputdir -i inputdir"
+    org.label-schema.vcs-url="https://github.com/cdcabrera/apidoc" \
 
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 

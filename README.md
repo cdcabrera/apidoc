@@ -1,15 +1,15 @@
 # apiDoc
-apiDoc creates a documentation from API descriptions in your source code.
+apiDoc creates documentation from API descriptions in your source code.
 
 ## Important note
 
-For the foreseeable future, maintaining the project build.
+For the foreseeable future, ONLY maintaining the project build. Anything beyond general maintenance, currently, falls outside the intended scope.
 
 NPM released under [@cdcabrera/apidoc](https://www.npmjs.com/package/@cdcabrera/apidoc)
 
-> Having options for handling specs is good, especially an easy to implement open alternative.
+> Having options for handling specs is good, especially an easy-to-implement open/free alternative.
 >
-> The focus of this maintenance will be dependency updates and NodeJS compatibility on the main `apidoc` package. May continue refactoring aspects of the codebase and consolidating, but then again maybe not.
+> The focus of this maintenance will be **dependency updates and NodeJS compatibility on the main `apidoc` package**. May continue refactoring aspects of the codebase and consolidating, but then again no promises.
 
 > ~~This project is currently not active maintained!
 See discussion https://github.com/apidoc/apidoc/issues/1436~~
@@ -89,15 +89,26 @@ Install type definitions (see [@types/apidoc](https://github.com/DefinitelyTyped
 $ npm install -D @types/apidoc
 ```
 
-## Docker image
+## Container image
 
-You can use apidoc in Docker like this:
+You can use apidoc in Podman or Docker.
 
+> We recommend using Podman Desktop these days.
+> - https://podman-desktop.io/downloads
+
+### Podman
+~~~bash
+# first build the image after cloning this repository
+podman build -t apidoc/apidoc .
+# run it
+podman run --rm -v $(pwd):/home/node/apidoc apidoc/apidoc -o YOUR_OUTPUT_DIRECTORY -i YOUR_INPUT_DIRECTORY
+~~~
+### Docker
 ~~~bash
 # first build the image after cloning this repository
 docker build -t apidoc/apidoc .
 # run it
-docker run --rm -v $(pwd):/home/node/apidoc apidoc/apidoc -o outputdir -i inputdir
+docker run --rm -v $(pwd):/home/node/apidoc apidoc/apidoc -o YOUR_OUTPUT_DIRECTORY -i YOUR_INPUT_DIRECTORY
 ~~~
 
 ## Supported programming languages
