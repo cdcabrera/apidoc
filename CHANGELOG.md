@@ -1,6 +1,26 @@
 # apiDoc Changelog
 
-### 1.2.0
+## [2.0.0](https://github.com/cdcabrera/apidoc/compare/d4685b5076383a4f68475b78f0e0d72d41b1b5d4...f725e719c834e9380e5ad7f622e21e6f74f2f71f) (2025-05-20)
+⚠ BREAKING CHANGES
+
+### General
+*  Not maintained note  ([e5970d4](https://github.com/cdcabrera/apidoc/commit/e5970d4a189c778836a827d6764b95c11f674588))
+
+### Builds
+*  package fix ([#12](https://github.com/cdcabrera/apidoc/pull/12)) ([f725e71](https://github.com/cdcabrera/apidoc/commit/f725e719c834e9380e5ad7f622e21e6f74f2f71f))
+*  changelog script ([#11](https://github.com/cdcabrera/apidoc/pull/11)) ([1c32998](https://github.com/cdcabrera/apidoc/commit/1c329987b331f62eb761bdf465af4437b79edcbd))
+*  refine package ignore ([#10](https://github.com/cdcabrera/apidoc/pull/10)) ([85f4553](https://github.com/cdcabrera/apidoc/commit/85f4553b1b767dce0d095e749cd15175f58d2df2))
+* **deps** move to local bootstrap ([#9](https://github.com/cdcabrera/apidoc/pull/9)) ([cae6f0f](https://github.com/cdcabrera/apidoc/commit/cae6f0f1f6e41899635e14dfe45082eb2bf31fe4))
+* **deps** bump group with 10 updates ([#8](https://github.com/cdcabrera/apidoc/pull/8)) ([1eb31f6](https://github.com/cdcabrera/apidoc/commit/1eb31f6a0a17c07d553dcd9a841901b07ef9078e))
+* **deps** webpack, esbuild ([#6](https://github.com/cdcabrera/apidoc/pull/6)) ([5cabe10](https://github.com/cdcabrera/apidoc/commit/5cabe102260011f137d27680cb92954160a0a006))
+* ⚠ **nodejs** remove 16, 18 support ([#7](https://github.com/cdcabrera/apidoc/pull/7)) ([c3ad652](https://github.com/cdcabrera/apidoc/commit/c3ad652136c402e41c6cd6bdbcd8f4837cae0a24))
+*  container run updates ([#5](https://github.com/cdcabrera/apidoc/pull/5)) ([014066e](https://github.com/cdcabrera/apidoc/commit/014066ecc9c581f741ac3310a73558f7373a7499))
+*  license format  ([bf720fc](https://github.com/cdcabrera/apidoc/commit/bf720fc7fa6deb9125646603bd160c53213e2e1e))
+* **deps** lock reset ([#3](https://github.com/cdcabrera/apidoc/pull/3)) ([592fd47](https://github.com/cdcabrera/apidoc/commit/592fd47072983ddd01a0f743aabce05ae9ed0ab2))
+*  dependabot, publishing, ci workflows ([#2](https://github.com/cdcabrera/apidoc/pull/2)) ([2028417](https://github.com/cdcabrera/apidoc/commit/20284177dc0ff9293ef15f10a469a919a71667a3))
+*  package publishing, readme notes ([#1](https://github.com/cdcabrera/apidoc/pull/1)) ([c427807](https://github.com/cdcabrera/apidoc/commit/c42780799bef273c08911479858662e845eba7ef))
+
+## # 1.2.0
 
 * Allow generation of `api-data.json` file with an option flag (PR #1427 by Henrik Gemal)
 
