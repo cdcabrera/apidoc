@@ -8,11 +8,11 @@ import { groupBy, extend, some } from 'lodash';
 import semver from 'semver';
 import Handlebars from 'handlebars';
 // bootstrap plugins
-import 'bootstrap/js/dropdown';
-import 'bootstrap/js/tooltip';
-import 'bootstrap/js/popover';
-import 'bootstrap/js/scrollspy';
-import 'bootstrap/js/tab';
+import './vendor/bootstrap/js/dropdown';
+import './vendor/bootstrap/js/tooltip';
+import './vendor/bootstrap/js/popover';
+import './vendor/bootstrap/js/scrollspy';
+import './vendor/bootstrap/js/tab';
 
 // Prism is the syntax highlighting lib
 import Prism from 'prismjs';

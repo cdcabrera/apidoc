@@ -16,7 +16,7 @@ module.exports = {
     'amd': true,
     'es6': true,
   },
-  ignorePatterns: ['**/vendor/*.js', '**/vendor/path-to-regexp/*.js'],
+  ignorePatterns: ['**/vendor/*.js', '**/vendor/**/*.js', '**/vendor/path-to-regexp/*.js'],
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
     'no-extra-parens': ['error', 'all'],
