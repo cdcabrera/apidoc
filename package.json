@@ -3,7 +3,9 @@
   "version": "1.2.0",
   "description": "RESTful web API Documentation Generator",
   "author": "Peter Rottmann <rottmann@inveris.de>",
-  "maintainers": ["cdcabrera"],
+  "maintainers": [
+    "cdcabrera"
+  ],
   "license": "MIT",
   "publishConfig": {
     "provenance": true
@@ -15,7 +17,7 @@
   "homepage": "https://apidocjs.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cdcabrera/apidoc.git"
+    "url": "git+https://github.com/cdcabrera/apidoc.git"
   },
   "bugs": {
     "url": "https://github.com/cdcabrera/apidoc/issues"
@@ -23,7 +25,7 @@
   "scripts": {
     "build-example": "./bin/apidoc -v -i example/ -o ./tmp/apidoc-output",
     "build-devxample": "./bin/apidoc -v -i example/ -o ./tmp/apidoc-output --debug",
-    "eslint": "./node_modules/.bin/eslint --ext js,mjs lib bin/apidoc template/src",
+    "eslint": "eslint --ext js,mjs lib bin/apidoc template/src",
     "pre-commit": "npm run eslint && npm run test",
     "release": "changelog --non-cc --link-url https://github.com/cdcabrera/apidoc.git",
     "serve:open": "xdg-open $PROTOCOL://$HOST:$PORT/ || open $PROTOCOL://$HOST:$PORT/",
