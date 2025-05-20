@@ -21,11 +21,13 @@
     "url": "https://github.com/cdcabrera/apidoc/issues"
   },
   "scripts": {
-    "build-example": "./bin/apidoc -v -i example/ -o /tmp/apidoc-output",
-    "build-devxample": "./bin/apidoc -v -i example/ -o /tmp/apidoc-output --debug",
+    "build-example": "./bin/apidoc -v -i example/ -o ./tmp/apidoc-output",
+    "build-devxample": "./bin/apidoc -v -i example/ -o ./tmp/apidoc-output --debug",
     "eslint": "./node_modules/.bin/eslint --ext js,mjs lib bin/apidoc template/src",
     "pre-commit": "npm run eslint && npm run test",
-    "serve": "npm run build-example && docker run --rm --name apidoc -p 8080:80 -v /tmp/apidoc-output:/usr/share/nginx/html:ro -d nginx",
+    "serve:open": "xdg-open $PROTOCOL://$HOST:$PORT/ || open $PROTOCOL://$HOST:$PORT/",
+    "serve:stop": "podman stop apidoc",
+    "serve": "export PROTOCOL=http; export HOST=127.0.0.1; export PORT=8080; npm run build-example && podman run --rm --name apidoc -p $PORT:80 -v ./tmp/apidoc-output:/usr/share/nginx/html:ro -d nginx; npm run serve:open",
     "test": "mocha --colors --no-package --no-config 'test/**/*_test.*js'"
   },
   "keywords": [
