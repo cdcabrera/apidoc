@@ -1,5 +1,13 @@
 # apiDoc Changelog
 
+## [2.0.1](https://github.com/cdcabrera/apidoc/compare/4062887109807e5f8887903b8ec2541625960ba5...a52df38b8ca3f753acbc0042e5581ecfbf0af487) (2025-05-27)
+
+
+### Builds
+* **deps-dev** move to eslint 9 ([#15](https://github.com/cdcabrera/apidoc/pull/15)) ([a52df38](https://github.com/cdcabrera/apidoc/commit/a52df38b8ca3f753acbc0042e5581ecfbf0af487))
+*  remove redundant bootstrap fonts ([#16](https://github.com/cdcabrera/apidoc/pull/16)) ([8101cbf](https://github.com/cdcabrera/apidoc/commit/8101cbf44c8494e99bfc504d5b41ecaca983d809))
+* **deps** reduce bootstrap size ([#14](https://github.com/cdcabrera/apidoc/pull/14)) ([9862d62](https://github.com/cdcabrera/apidoc/commit/9862d62a4089c59dd973588a52b59fbb79a8dead))
+
 ## [2.0.0](https://github.com/cdcabrera/apidoc/compare/d4685b5076383a4f68475b78f0e0d72d41b1b5d4...f725e719c834e9380e5ad7f622e21e6f74f2f71f) (2025-05-20)
 ⚠ BREAKING CHANGES
 
