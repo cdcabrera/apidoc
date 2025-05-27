@@ -25,7 +25,7 @@
   "scripts": {
     "build-example": "./bin/apidoc -v -i example/ -o ./tmp/apidoc-output",
     "build-devxample": "./bin/apidoc -v -i example/ -o ./tmp/apidoc-output --debug",
-    "eslint": "eslint --ext js,mjs lib bin/apidoc template/src",
+    "eslint": "eslint",
     "pre-commit": "npm run eslint && npm run test",
     "release": "changelog --non-cc --link-url https://github.com/cdcabrera/apidoc.git",
     "serve:open": "xdg-open $PROTOCOL://$HOST:$PORT/ || open $PROTOCOL://$HOST:$PORT/",
@@ -73,16 +73,17 @@
     "winston": "^3.17.0"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.9",
+    "@eslint/js": "^9.27.0",
     "@types/lodash": "^4.17.16",
     "@types/mocha": "^10.0.10",
     "@types/node": "^16.11.9",
     "changelog-light": "^2.0.6",
-    "eslint": "^8.38.0",
-    "eslint-config-recommended": "^4.1.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
+    "eslint": "^9.27.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^17.18.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "globals": "^16.2.0",
     "mocha": "^11.2.2"
   }
 }

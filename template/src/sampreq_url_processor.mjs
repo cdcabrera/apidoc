@@ -16,7 +16,7 @@ export default class UrlProcessor {
     const queryParametersChangedInPathname = {};
 
     // For API parameters in the URL parts delimited by `/` (e.g. `/:foo/:bar`).
-    parsedUrl.pathname.split('/').forEach((pathnamePart, i) => {
+    parsedUrl.pathname.split('/').forEach((pathnamePart) => {
       if (pathnamePart.charAt(0) === ':') {
         const realPathnamePart = pathnamePart.slice(1);
 
