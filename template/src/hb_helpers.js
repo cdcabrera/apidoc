@@ -59,12 +59,12 @@ export function register () {
      * start/stop timer for simple performance check.
      */
   let timer;
-  Handlebars.registerHelper('startTimer', function (text) {
+  Handlebars.registerHelper('startTimer', function () {
     timer = new Date();
     return '';
   });
 
-  Handlebars.registerHelper('stopTimer', function (text) {
+  Handlebars.registerHelper('stopTimer', function () {
     console.log(new Date() - timer);
     return '';
   });
@@ -137,11 +137,11 @@ export function register () {
   Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
     switch (operator) {
       case '==':
-        return v1 == v2 ? options.fn(this) : options.inverse(this); // eslint-disable-line eqeqeq
+        return v1 == v2 ? options.fn(this) : options.inverse(this);
       case '===':
         return v1 === v2 ? options.fn(this) : options.inverse(this);
       case '!=':
-        return v1 != v2 ? options.fn(this) : options.inverse(this); // eslint-disable-line eqeqeq
+        return v1 != v2 ? options.fn(this) : options.inverse(this);
       case '!==':
         return v1 !== v2 ? options.fn(this) : options.inverse(this);
       case '<':
@@ -287,7 +287,7 @@ export function register () {
     return _handlebarsEachCompared('key', newSource, newCompare, options);
   });
 
-  Handlebars.registerHelper('body2json', function (context, options) {
+  Handlebars.registerHelper('body2json', function (context) {
     return body2json(context);
   });
 

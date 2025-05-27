@@ -542,7 +542,7 @@ function init () {
     });
 
     // show 1st equal or lower Version of each entry
-    $('article[data-version]').each(function (index) {
+    $('article[data-version]').each(function () {
       const group = $(this).data('group');
       $('section#api-' + group).removeClass('hide');
       if ($('section#api-' + group + ' article:visible').length === 0) {
@@ -664,7 +664,7 @@ function init () {
 
     if (!compareVersion && version === selectedVersion) { return; }
 
-    if ((compareVersion && (articleVersions[group][name][0] === selectedVersion)) || version === selectedVersion) { // eslint-disable-line no-extra-parens
+    if ((compareVersion && (articleVersions[group][name][0] === selectedVersion)) || version === selectedVersion) {
       // the version of the entry is set to the highest version (reset)
       resetArticle(group, name, version);
     } else {

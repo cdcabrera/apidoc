@@ -7,3 +7,5 @@ tmp/
 .idea
 test/*/fixtures*/vendor/
 test/apidoc/fixtures*/css/
+#misc
+.archive
