@@ -6,6 +6,9 @@ import importPlugin from 'eslint-plugin-import';
 import nodePlugin from 'eslint-plugin-n';
 
 export default [
+  {
+    files: ['bin/!(*.*)'],
+  },
   includeIgnoreFile(join(process.cwd(), '.gitignore')),
   {
     ignores: ['example/**/*', '**/vendor/**/*', 'test/**/*'],
@@ -25,6 +28,7 @@ export default [
     rules: {
       'comma-dangle': ['error', 'always-multiline'],
       'n/no-process-exit': 0,
+      'n/no-unpublished-bin': 0,
       'n/no-unpublished-require': 0,
       'n/no-unsupported-features/node-builtins': 1,
       'no-empty': ['error', { allowEmptyCatch: true }],
