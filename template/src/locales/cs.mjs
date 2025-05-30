@@ -23,5 +23,5 @@ export const cs = {
   url: 'url',
   Copy: 'Kopírovat',
   'Press Ctrl+C to copy': 'Stisknutím kombinace kláves Ctrl+C zkopírujte',
-  'copied!': 'Zkopírovaný!',
+  'copied!': 'Zkopírovaný!'
 };

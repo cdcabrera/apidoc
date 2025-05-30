@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Prism.highlightAll();
 });
 
-function init () {
+function init() {
   // the data is injected at compile time by webpack
   let api = API_DATA; // eslint-disable-line no-undef
   const apiProject = API_PROJECT; // eslint-disable-line no-undef
@@ -62,12 +62,14 @@ function init () {
     aloneDisplay: false,
     showRequiredLabels: false,
     withGenerator: true,
-    withCompare: true,
+    withCompare: true
   };
 
   apiProject.template = Object.assign(defaultTemplateOptions, apiProject.template ?? {});
 
-  if (apiProject.template.forceLanguage) { setLanguage(apiProject.template.forceLanguage); }
+  if (apiProject.template.forceLanguage) {
+    setLanguage(apiProject.template.forceLanguage);
+  }
 
   //
   // Data transform
@@ -104,7 +106,9 @@ function init () {
     titles.sort();
 
     // custom order
-    if (apiProject.order) { titles = sortByOrder(titles, apiProject.order, '#~#'); }
+    if (apiProject.order) {
+      titles = sortByOrder(titles, apiProject.order, '#~#');
+    }
 
     // add single elements to the new list
     titles.forEach(name => {
@@ -138,7 +142,9 @@ function init () {
   apiGroups.sort();
 
   // custom order
-  if (apiProject.order) { apiGroups = sortGroupsByOrder(apiGroupTitles, apiProject.order); }
+  if (apiProject.order) {
+    apiGroups = sortGroupsByOrder(apiGroupTitles, apiProject.order);
+  }
 
   // sort versions DESC
   apiVersions = Object.keys(apiVersions);
@@ -154,7 +160,7 @@ function init () {
     nav.push({
       group: group,
       isHeader: true,
-      title: apiGroupTitles[group],
+      title: apiGroupTitles[group]
     });
 
     // Submenu
@@ -168,7 +174,7 @@ function init () {
             name: entry.name,
             type: entry.type,
             version: entry.version,
-            url: entry.url,
+            url: entry.url
           });
         } else {
           nav.push({
@@ -178,7 +184,7 @@ function init () {
             name: entry.name,
             type: entry.type,
             version: entry.version,
-            url: entry.url,
+            url: entry.url
           });
         }
         oldName = entry.name;
@@ -187,13 +193,13 @@ function init () {
   });
 
   /**
-     * Add navigation items by analyzing the HTML content and searching for h1 and h2 tags
-     * @param nav Object the navigation array
-     * @param content string the compiled HTML content
-     * @param index where to insert items
-     * @return boolean true if any good-looking (i.e. with a group identifier) <h1> tag was found
-     */
-  function addNav (nav, content, index) {
+   * Add navigation items by analyzing the HTML content and searching for h1 and h2 tags
+   * @param nav Object the navigation array
+   * @param content string the compiled HTML content
+   * @param index where to insert items
+   * @return boolean true if any good-looking (i.e. with a group identifier) <h1> tag was found
+   */
+  function addNav(nav, content, index) {
     let foundLevel1 = false;
     if (!content) {
       return foundLevel1;
@@ -211,7 +217,7 @@ function init () {
             group: group,
             isHeader: true,
             title: title,
-            isFixed: true,
+            isFixed: true
           });
           index++;
           foundLevel1 = true;
@@ -223,7 +229,7 @@ function init () {
             isHeader: false,
             title: title,
             isFixed: false,
-            version: '1.0',
+            version: '1.0'
           });
           index++;
         }
@@ -236,12 +242,13 @@ function init () {
   // Mainmenu Header entry
   if (apiProject.header) {
     foundLevel1 = addNav(nav, apiProject.header.content, 0); // Add level 1 and 2 titles
-    if (!foundLevel1) { // If no Level 1 tags were found, make a title
+    if (!foundLevel1) {
+      // If no Level 1 tags were found, make a title
       nav.unshift({
         group: '_header',
         isHeader: true,
         title: apiProject.header.title == null ? __('General') : apiProject.header.title,
-        isFixed: true,
+        isFixed: true
       });
     }
   }
@@ -250,12 +257,13 @@ function init () {
   if (apiProject.footer) {
     const lastNavIndex = nav.length;
     foundLevel1 = addNav(nav, apiProject.footer.content, nav.length); // Add level 1 and 2 titles
-    if (!foundLevel1 && apiProject.footer.title != null) { // If no Level 1 tags were found, make a title
+    if (!foundLevel1 && apiProject.footer.title != null) {
+      // If no Level 1 tags were found, make a title
       nav.splice(lastNavIndex, 0, {
         group: '_footer',
         isHeader: true,
         title: apiProject.footer.title,
-        isFixed: true,
+        isFixed: true
       });
     }
   }
@@ -269,7 +277,7 @@ function init () {
 
   // render sidenav
   const fields = {
-    nav: nav,
+    nav: nav
   };
   $('#sidenav').append(templateSidenav(fields));
 
@@ -281,7 +289,9 @@ function init () {
   $('#project').append(templateProject(apiProject));
 
   // render apiDoc, header/footer documentation
-  if (apiProject.header) { $('#header').append(templateHeader(apiProject.header)); }
+  if (apiProject.header) {
+    $('#header').append(templateHeader(apiProject.header));
+  }
 
   if (apiProject.footer) {
     $('#footer').append(templateFooter(apiProject.footer));
@@ -318,13 +328,13 @@ function init () {
           });
           fields = {
             article: entry,
-            versions: articleVersions[entry.group][entry.name],
+            versions: articleVersions[entry.group][entry.name]
           };
         } else {
           fields = {
             article: entry,
             hidden: true,
-            versions: articleVersions[entry.group][entry.name],
+            versions: articleVersions[entry.group][entry.name]
           };
         }
 
@@ -345,16 +355,20 @@ function init () {
 
         addArticleSettings(fields, entry);
 
-        if (entry.groupTitle) { title = entry.groupTitle; }
+        if (entry.groupTitle) {
+          title = entry.groupTitle;
+        }
 
         // TODO: make groupDescription comparable with older versions (not important for the moment)
-        if (entry.groupDescription) { description = entry.groupDescription; }
+        if (entry.groupDescription) {
+          description = entry.groupDescription;
+        }
 
         articles.push({
           article: templateArticle(fields),
           group: entry.group,
           name: entry.name,
-          aloneDisplay: apiProject.template.aloneDisplay,
+          aloneDisplay: apiProject.template.aloneDisplay
         });
         oldName = entry.name;
       }
@@ -366,7 +380,7 @@ function init () {
       title: title,
       description: description,
       articles: articles,
-      aloneDisplay: apiProject.template.aloneDisplay,
+      aloneDisplay: apiProject.template.aloneDisplay
     };
     content += templateSections(fields);
   });
@@ -385,53 +399,67 @@ function init () {
   });
 
   // Content-Scroll on Navigation click.
-  $('.sidenav').find('a').on('click', function (e) {
-    e.preventDefault();
-    const id = this.getAttribute('href');
-    if (apiProject.template.aloneDisplay) {
-      const active = document.querySelector('.sidenav > li.active');
-      if (active) { active.classList.remove('active'); }
-      this.parentNode.classList.add('active');
-    } else {
-      const el = document.querySelector(id);
-      if (el) { $('html,body').animate({ scrollTop: el.offsetTop }, 400); }
-    }
-    window.location.hash = id;
-  });
+  $('.sidenav')
+    .find('a')
+    .on('click', function (e) {
+      e.preventDefault();
+      const id = this.getAttribute('href');
+      if (apiProject.template.aloneDisplay) {
+        const active = document.querySelector('.sidenav > li.active');
+        if (active) {
+          active.classList.remove('active');
+        }
+        this.parentNode.classList.add('active');
+      } else {
+        const el = document.querySelector(id);
+        if (el) {
+          $('html,body').animate({ scrollTop: el.offsetTop }, 400);
+        }
+      }
+      window.location.hash = id;
+    });
 
   /**
-     * Check if Parameter (sub) List has a type Field.
-     * Example: @apiSuccess          varname1 No type.
-     *          @apiSuccess {String} varname2 With type.
-     *
-     * @param {Object} fields
-     */
-  function _hasTypeInFields (fields) {
+   * Check if Parameter (sub) List has a type Field.
+   * Example: @apiSuccess          varname1 No type.
+   *          @apiSuccess {String} varname2 With type.
+   *
+   * @param {Object} fields
+   */
+  function _hasTypeInFields(fields) {
     let result = false;
     $.each(fields, name => {
-      result = result || some(fields[name], item => { return item.type; });
+      result =
+        result ||
+        some(fields[name], item => {
+          return item.type;
+        });
     });
     return result;
   }
 
   /**
-     * On Template changes, recall plugins.
-     */
-  function initDynamic () {
+   * On Template changes, recall plugins.
+   */
+  function initDynamic() {
     // Bootstrap popover
-    $('button[data-toggle="popover"]').popover().click(function (e) {
-      e.preventDefault();
-    });
+    $('button[data-toggle="popover"]')
+      .popover()
+      .click(function (e) {
+        e.preventDefault();
+      });
 
     const version = $('#version strong').html();
     $('#sidenav li').removeClass('is-new');
     if (apiProject.template.withCompare) {
-      $('#sidenav li[data-version=\'' + version + '\']').each(function () {
+      $(`#sidenav li[data-version='${version}']`).each(function () {
         const group = $(this).data('group');
         const name = $(this).data('name');
-        const length = $('#sidenav li[data-group=\'' + group + '\'][data-name=\'' + name + '\']').length;
-        const index = $('#sidenav li[data-group=\'' + group + '\'][data-name=\'' + name + '\']').index($(this));
-        if (length === 1 || index === length - 1) { $(this).addClass('is-new'); }
+        const length = $(`#sidenav li[data-group='${group}'][data-name='${name}']`).length;
+        const index = $(`#sidenav li[data-group='${group}'][data-name='${name}']`).index($(this));
+        if (length === 1 || index === length - 1) {
+          $(this).addClass('is-new');
+        }
       });
     }
 
@@ -512,7 +540,7 @@ function init () {
   // HTML-Template specific jQuery-Functions
   //
   // Change Main Version
-  function setMainVersion (selectedVersion) {
+  function setMainVersion(selectedVersion) {
     if (typeof selectedVersion === 'undefined') {
       selectedVersion = $('#version strong').html();
     } else {
@@ -534,9 +562,13 @@ function init () {
       if (!shown[id] && semver.lte(version, selectedVersion)) {
         shown[id] = true;
         // enable Article
-        document.querySelector(`article[data-group="${group}"][data-name="${name}"][data-version="${version}"]`).classList.remove('hide');
+        document
+          .querySelector(`article[data-group="${group}"][data-name="${name}"][data-version="${version}"]`)
+          .classList.remove('hide');
         // enable Navigation
-        document.querySelector(`#sidenav li[data-group="${group}"][data-name="${name}"][data-version="${version}"]`).classList.remove('hide');
+        document
+          .querySelector(`#sidenav li[data-group="${group}"][data-name="${name}"][data-version="${version}"]`)
+          .classList.remove('hide');
         document.querySelector(`#sidenav li.nav-header[data-group="${group}"]`).classList.remove('hide');
       }
     });
@@ -584,7 +616,9 @@ function init () {
   // and would make it jump to the wrong position or not jump at all.
   if (window.location.hash) {
     const id = decodeURI(window.location.hash);
-    if ($(id).length > 0) { $('html,body').animate({ scrollTop: parseInt($(id).offset().top) }, 0); }
+    if ($(id).length > 0) {
+      $('html,body').animate({ scrollTop: parseInt($(id).offset().top) }, 0);
+    }
   }
 
   /**
@@ -605,22 +639,22 @@ function init () {
   /**
    * Filter search with a delay to prevent issues with very large projects hogging the browser event loop during the search
    */
-  $('[data-action="filter-search"]').on('keyup', resetableTimeout(event => {
-    const query = event.currentTarget.value.toLowerCase();
+  $('[data-action="filter-search"]').on(
+    'keyup',
+    resetableTimeout(event => {
+      const query = event.currentTarget.value.toLowerCase();
 
-    $('.sidenav a.nav-list-item').filter((index, el) => {
-      return $(el).toggle($(el).text().toLowerCase().indexOf(query) > -1);
-    });
-  }, 200));
+      $('.sidenav a.nav-list-item').filter((index, el) => {
+        return $(el).toggle($(el).text().toLowerCase().indexOf(query) > -1);
+      });
+    }, 200)
+  );
 
   /**
    * Search reset
    */
   $('span.search-reset').on('click', function () {
-    $('#scrollingNav .sidenav-search input.search')
-      .val('')
-      .focus()
-    ;
+    $('#scrollingNav .sidenav-search input.search').val('').focus();
     $('.sidenav').find('a.nav-list-item').show();
   });
 
@@ -634,7 +668,7 @@ function init () {
    * @param {*} delay the time, in milliseconds that the timer should wait before the specified function or code is executed.
    * @returns Timeout function includes the callback
    */
-  function resetableTimeout (callback, delay) {
+  function resetableTimeout(callback, delay) {
     let timer = null;
     return (...args) => {
       clearTimeout(timer);
@@ -643,9 +677,9 @@ function init () {
   }
 
   /**
-     * Change version of an article to compare it to an other version.
-     */
-  function changeVersionCompareTo (e) {
+   * Change version of an article to compare it to an other version.
+   */
+  function changeVersionCompareTo(e) {
     e.preventDefault();
 
     const $root = $(this).parents('article');
@@ -660,25 +694,33 @@ function init () {
 
     const compareVersion = $root.data('compare-version');
 
-    if (compareVersion === selectedVersion) { return; }
+    if (compareVersion === selectedVersion) {
+      return;
+    }
 
-    if (!compareVersion && version === selectedVersion) { return; }
+    if (!compareVersion && version === selectedVersion) {
+      return;
+    }
 
-    if ((compareVersion && (articleVersions[group][name][0] === selectedVersion)) || version === selectedVersion) {
+    if ((compareVersion && articleVersions[group][name][0] === selectedVersion) || version === selectedVersion) {
       // the version of the entry is set to the highest version (reset)
       resetArticle(group, name, version);
     } else {
       let sourceEntry = {};
       let compareEntry = {};
       $.each(apiByGroupAndName[group][name], function (index, entry) {
-        if (entry.version === version) { sourceEntry = entry; }
-        if (entry.version === selectedVersion) { compareEntry = entry; }
+        if (entry.version === version) {
+          sourceEntry = entry;
+        }
+        if (entry.version === selectedVersion) {
+          compareEntry = entry;
+        }
       });
 
       const fields = {
         article: sourceEntry,
         compare: compareEntry,
-        versions: articleVersions[group][name],
+        versions: articleVersions[group][name]
       };
 
       // add unique id
@@ -690,26 +732,46 @@ function init () {
       fields.compare.id = fields.compare.id.replace(/\./g, '_');
 
       let entry = sourceEntry;
-      if (entry.header && entry.header.fields) { fields._hasTypeInHeaderFields = _hasTypeInFields(entry.header.fields); }
+      if (entry.header && entry.header.fields) {
+        fields._hasTypeInHeaderFields = _hasTypeInFields(entry.header.fields);
+      }
 
-      if (entry.parameter && entry.parameter.fields) { fields._hasTypeInParameterFields = _hasTypeInFields(entry.parameter.fields); }
+      if (entry.parameter && entry.parameter.fields) {
+        fields._hasTypeInParameterFields = _hasTypeInFields(entry.parameter.fields);
+      }
 
-      if (entry.error && entry.error.fields) { fields._hasTypeInErrorFields = _hasTypeInFields(entry.error.fields); }
+      if (entry.error && entry.error.fields) {
+        fields._hasTypeInErrorFields = _hasTypeInFields(entry.error.fields);
+      }
 
-      if (entry.success && entry.success.fields) { fields._hasTypeInSuccessFields = _hasTypeInFields(entry.success.fields); }
+      if (entry.success && entry.success.fields) {
+        fields._hasTypeInSuccessFields = _hasTypeInFields(entry.success.fields);
+      }
 
-      if (entry.info && entry.info.fields) { fields._hasTypeInInfoFields = _hasTypeInFields(entry.info.fields); }
+      if (entry.info && entry.info.fields) {
+        fields._hasTypeInInfoFields = _hasTypeInFields(entry.info.fields);
+      }
 
       entry = compareEntry;
-      if (fields._hasTypeInHeaderFields !== true && entry.header && entry.header.fields) { fields._hasTypeInHeaderFields = _hasTypeInFields(entry.header.fields); }
+      if (fields._hasTypeInHeaderFields !== true && entry.header && entry.header.fields) {
+        fields._hasTypeInHeaderFields = _hasTypeInFields(entry.header.fields);
+      }
 
-      if (fields._hasTypeInParameterFields !== true && entry.parameter && entry.parameter.fields) { fields._hasTypeInParameterFields = _hasTypeInFields(entry.parameter.fields); }
+      if (fields._hasTypeInParameterFields !== true && entry.parameter && entry.parameter.fields) {
+        fields._hasTypeInParameterFields = _hasTypeInFields(entry.parameter.fields);
+      }
 
-      if (fields._hasTypeInErrorFields !== true && entry.error && entry.error.fields) { fields._hasTypeInErrorFields = _hasTypeInFields(entry.error.fields); }
+      if (fields._hasTypeInErrorFields !== true && entry.error && entry.error.fields) {
+        fields._hasTypeInErrorFields = _hasTypeInFields(entry.error.fields);
+      }
 
-      if (fields._hasTypeInSuccessFields !== true && entry.success && entry.success.fields) { fields._hasTypeInSuccessFields = _hasTypeInFields(entry.success.fields); }
+      if (fields._hasTypeInSuccessFields !== true && entry.success && entry.success.fields) {
+        fields._hasTypeInSuccessFields = _hasTypeInFields(entry.success.fields);
+      }
 
-      if (fields._hasTypeInInfoFields !== true && entry.info && entry.info.fields) { fields._hasTypeInInfoFields = _hasTypeInFields(entry.info.fields); }
+      if (fields._hasTypeInInfoFields !== true && entry.info && entry.info.fields) {
+        fields._hasTypeInInfoFields = _hasTypeInFields(entry.info.fields);
+      }
 
       const content = templateCompareArticle(fields);
       $root.after(content);
@@ -719,7 +781,9 @@ function init () {
       $content.find('.versions li.version a').on('click', changeVersionCompareTo);
 
       // select navigation
-      $('#sidenav li[data-group=\'' + group + '\'][data-name=\'' + name + '\'][data-version=\'' + currentVersion + '\']').addClass('has-modifications');
+      $(`#sidenav li[data-group='${group}'][data-name='${name}'][data-version='${currentVersion}']`).addClass(
+        'has-modifications'
+      );
 
       $root.remove();
       // TODO: on change main version or select the highest version re-render
@@ -730,27 +794,33 @@ function init () {
   }
 
   /**
-     * Compare all currently selected Versions with their predecessor.
-     */
-  function changeAllVersionCompareTo (e) {
+   * Compare all currently selected Versions with their predecessor.
+   */
+  function changeAllVersionCompareTo(e) {
     e.preventDefault();
     $('article:visible .versions').each(function () {
       const $root = $(this).parents('article');
       const currentVersion = $root.data('version');
       let $foundElement = null;
-      $(this).find('li.version a').each(function () {
-        const selectVersion = $(this).html();
-        if (selectVersion < currentVersion && !$foundElement) { $foundElement = $(this); }
-      });
+      $(this)
+        .find('li.version a')
+        .each(function () {
+          const selectVersion = $(this).html();
+          if (selectVersion < currentVersion && !$foundElement) {
+            $foundElement = $(this);
+          }
+        });
 
-      if ($foundElement) { $foundElement.trigger('click'); }
+      if ($foundElement) {
+        $foundElement.trigger('click');
+      }
     });
   }
 
   /**
-     * Add article settings.
-     */
-  function addArticleSettings (fields, entry) {
+   * Add article settings.
+   */
+  function addArticleSettings(fields, entry) {
     // add unique id
     // TODO: replace all group-name-version in template with id.
     fields.id = fields.article.group + '-' + fields.article.name + '-' + fields.article.version;
@@ -781,16 +851,18 @@ function init () {
   }
 
   /**
-     * Render Article.
-     */
-  function renderArticle (group, name, version) {
+   * Render Article.
+   */
+  function renderArticle(group, name, version) {
     let entry = {};
     $.each(apiByGroupAndName[group][name], function (index, currentEntry) {
-      if (currentEntry.version === version) { entry = currentEntry; }
+      if (currentEntry.version === version) {
+        entry = currentEntry;
+      }
     });
     const fields = {
       article: entry,
-      versions: articleVersions[group][name],
+      versions: articleVersions[group][name]
     };
 
     addArticleSettings(fields, entry);
@@ -799,10 +871,10 @@ function init () {
   }
 
   /**
-     * Render original Article and remove the current visible Article.
-     */
-  function resetArticle (group, name, version) {
-    const $root = $('article[data-group=\'' + group + '\'][data-name=\'' + name + '\']:visible');
+   * Render original Article and remove the current visible Article.
+   */
+  function resetArticle(group, name, version) {
+    const $root = $(`article[data-group='${group}'][data-name='${name}']:visible`);
     const content = renderArticle(group, name, version);
 
     $root.after(content);
@@ -811,56 +883,68 @@ function init () {
     // Event on.click needs to be reassigned (should actually work with on ... automatically)
     $content.find('.versions li.version a').on('click', changeVersionCompareTo);
 
-    $('#sidenav li[data-group=\'' + group + '\'][data-name=\'' + name + '\'][data-version=\'' + version + '\']').removeClass('has-modifications');
+    $(`#sidenav li[data-group='${group}'][data-name='${name}'][data-version='${version}']`).removeClass(
+      'has-modifications'
+    );
 
     $root.remove();
   }
 
   /**
-     * Return ordered entries by custom order and append not defined entries to the end.
-     * @param  {String[]} elements
-     * @param  {String[]} order
-     * @param  {String}   splitBy
-     * @return {String[]} Custom ordered list.
-     */
-  function sortByOrder (elements, order, splitBy) {
+   * Return ordered entries by custom order and append not defined entries to the end.
+   * @param  {String[]} elements
+   * @param  {String[]} order
+   * @param  {String}   splitBy
+   * @return {String[]} Custom ordered list.
+   */
+  function sortByOrder(elements, order, splitBy) {
     const results = [];
     order.forEach(function (name) {
       if (splitBy) {
         elements.forEach(function (element) {
           const parts = element.split(splitBy);
           const key = parts[0]; // reference keep for sorting
-          if (key === name || parts[1] === name) { results.push(element); }
+          if (key === name || parts[1] === name) {
+            results.push(element);
+          }
         });
       } else {
         elements.forEach(function (key) {
-          if (key === name) { results.push(name); }
+          if (key === name) {
+            results.push(name);
+          }
         });
       }
     });
     // Append all other entries that are not defined in order
     elements.forEach(function (element) {
-      if (results.indexOf(element) === -1) { results.push(element); }
+      if (results.indexOf(element) === -1) {
+        results.push(element);
+      }
     });
     return results;
   }
 
   /**
-     * Return ordered groups by custom order and append not defined groups to the end.
-     * @param  {Object[]} elements (key: group name, value: group title)
-     * @param  {String[]} order
-     * @return {String[]} Custom ordered list.
-     */
-  function sortGroupsByOrder (groups, order) {
+   * Return ordered groups by custom order and append not defined groups to the end.
+   * @param  {Object[]} elements (key: group name, value: group title)
+   * @param  {String[]} order
+   * @return {String[]} Custom ordered list.
+   */
+  function sortGroupsByOrder(groups, order) {
     const results = [];
     order.forEach(sortKey => {
       Object.keys(groups).forEach(name => {
-        if (groups[name].replace(/_/g, ' ') === sortKey) { results.push(name); }
+        if (groups[name].replace(/_/g, ' ') === sortKey) {
+          results.push(name);
+        }
       });
     });
     // Append all other entries that are not defined in order
     Object.keys(groups).forEach(name => {
-      if (results.indexOf(name) === -1) { results.push(name); }
+      if (results.indexOf(name) === -1) {
+        results.push(name);
+      }
     });
     return results;
   }

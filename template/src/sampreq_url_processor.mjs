@@ -10,18 +10,21 @@
  */
 export default class UrlProcessor {
   // Replace parameters from url (:id) by the parameters from input values
-  hydrate (url, queryParameters) {
+  hydrate(url, queryParameters) {
     // The dummy URL base is only used for parses of relative URLs in Node.js.
     const parsedUrl = new URL(url, typeof window === 'undefined' ? 'https://dummy.base' : window.location.origin);
     const queryParametersChangedInPathname = {};
 
     // For API parameters in the URL parts delimited by `/` (e.g. `/:foo/:bar`).
-    parsedUrl.pathname.split('/').forEach((pathnamePart) => {
+    parsedUrl.pathname.split('/').forEach(pathnamePart => {
       if (pathnamePart.charAt(0) === ':') {
         const realPathnamePart = pathnamePart.slice(1);
 
         if (typeof queryParameters[realPathnamePart] !== 'undefined') {
-          parsedUrl.pathname = parsedUrl.pathname.replace(pathnamePart, encodeURIComponent(queryParameters[realPathnamePart]));
+          parsedUrl.pathname = parsedUrl.pathname.replace(
+            pathnamePart,
+            encodeURIComponent(queryParameters[realPathnamePart])
+          );
           queryParametersChangedInPathname[realPathnamePart] = queryParameters[realPathnamePart];
         }
       }

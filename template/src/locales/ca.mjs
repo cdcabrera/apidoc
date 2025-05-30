@@ -15,7 +15,7 @@ export const ca = {
   'Permission:': 'Permisos:',
   Response: 'Resposta',
   Send: 'Enviar',
-  'Send a Sample Request': 'Enviar una petició d\'exemple',
+  'Send a Sample Request': "Enviar una petició d'exemple",
   'show up to version:': 'mostrar versió:',
   'Size range:': 'Tamany de rang:',
   'Toggle navigation': 'Canvia la navegació',
@@ -23,5 +23,5 @@ export const ca = {
   url: 'url',
   Copy: 'Copiar',
   'Press Ctrl+C to copy': 'Premeu Ctrl+C per copiar',
-  'copied!': 'Copiat!',
+  'copied!': 'Copiat!'
 };

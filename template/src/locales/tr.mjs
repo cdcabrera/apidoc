@@ -23,5 +23,5 @@ export const tr = {
   url: 'url',
   Copy: 'Kopya etmek',
   'Press Ctrl+C to copy': 'Kopyalamak için Ctrl+C tuşlarına basın',
-  'copied!': 'Kopya -lanan!',
+  'copied!': 'Kopya -lanan!'
 };

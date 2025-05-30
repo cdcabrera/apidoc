@@ -32,5 +32,5 @@ export const fr = {
   url: 'url',
   Copy: 'Copier',
   'Press Ctrl+C to copy': 'Appuyez sur Ctrl+C pour copier',
-  'copied!': 'Copié!',
+  'copied!': 'Copié!'
 };

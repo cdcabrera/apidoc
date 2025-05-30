@@ -27,10 +27,14 @@ const apidoc = require(path.join(__dirname, '..', 'lib', 'index'));
  * @param {String|String[]} filters
  * @returns {Object}
  */
-function transformToObject (filters) {
-  if (!filters) { return; }
+function transformToObject(filters) {
+  if (!filters) {
+    return;
+  }
 
-  if (typeof filters === 'string') { filters = [filters]; }
+  if (typeof filters === 'string') {
+    filters = [filters];
+  }
 
   const result = {};
   filters.forEach(function (filter) {
@@ -60,9 +64,17 @@ program
 
   .option('--encoding <encoding>', 'Set the encoding of the source code. [utf8].', 'utf8')
 
-  .option('-e, --exclude-filters <exclude-filters...>', 'RegEx-Filter to select files / dirs that should not be parsed (many -e can be used). node_modules and apidoc.config.js are always excluded.', [])
+  .option(
+    '-e, --exclude-filters <exclude-filters...>',
+    'RegEx-Filter to select files / dirs that should not be parsed (many -e can be used). node_modules and apidoc.config.js are always excluded.',
+    []
+  )
 
-  .option('-f --file-filters <file-filters...>', 'RegEx-Filter to select files that should be parsed (multiple -f can be used).', [])
+  .option(
+    '-f --file-filters <file-filters...>',
+    'RegEx-Filter to select files that should be parsed (multiple -f can be used).',
+    []
+  )
 
   .option('--filter-by <tag-filter=value>', 'Filter documentation by tag', '')
 
@@ -106,7 +118,9 @@ program
 
 const argv = program.opts();
 
-const defaultIncludeFilters = ['.*\\.(clj|cls|coffee|cpp|cs|dart|erl|exs?|go|groovy|ino?|java|js|jsx|kt|litcoffee|lua|mjs|p|php?|pl|pm|py|rb|scala|ts|tsx|vue)$'];
+const defaultIncludeFilters = [
+  '.*\\.(clj|cls|coffee|cpp|cs|dart|erl|exs?|go|groovy|ino?|java|js|jsx|kt|litcoffee|lua|mjs|p|php?|pl|pm|py|rb|scala|ts|tsx|vue)$'
+];
 
 const options = {
   excludeFilters: ['apidoc.config.js', 'node_modules'].concat(argv.excludeFilters.length ? argv.excludeFilters : []),
@@ -133,7 +147,7 @@ const options = {
   filterBy: argv.filterBy,
   logFormat: argv.logFormat,
   warnError: argv.warnError,
-  writeJson: argv.writeJson,
+  writeJson: argv.writeJson
 };
 
 if (options.debug) {
@@ -158,15 +172,17 @@ if (options.verbose && options.logFormat === 'simple') {
 if (argv.watch) {
   nodemon({ watch: options.src });
   console.info('Watch mode enabled\nListening for changes on input files...');
-  nodemon.on('quit', function () {
-    console.info('\nProcess terminated.');
-    process.exit();
-  }).on('restart', function () {
-    console.info('Changes detected, rebuilding...');
-    apidoc.createDoc(options);
-    const d = new Date();
-    console.info(`Build finished at ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`);
-  });
+  nodemon
+    .on('quit', function () {
+      console.info('\nProcess terminated.');
+      process.exit();
+    })
+    .on('restart', function () {
+      console.info('Changes detected, rebuilding...');
+      apidoc.createDoc(options);
+      const d = new Date();
+      console.info(`Build finished at ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`);
+    });
 }
 
 // Create documentation

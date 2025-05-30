@@ -23,5 +23,5 @@ export const ptBr = {
   url: 'url',
   Copy: 'Copiar',
   'Press Ctrl+C to copy': 'Pressione Ctrl+C para copiar',
-  'copied!': 'Copiado!',
+  'copied!': 'Copiado!'
 };

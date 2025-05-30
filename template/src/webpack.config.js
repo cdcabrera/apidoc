@@ -20,13 +20,13 @@ module.exports = {
     alias: {
       handlebars: 'handlebars/dist/handlebars.min.js',
       // use src jquery, not the minified version or it won't be found
-      jquery: 'jquery/src/jquery',
+      jquery: 'jquery/src/jquery'
     },
     extensions: ['.js', '.mjs'],
     // avoid issue with webpack not finding the polyfill
     fallback: {
-      util: false,
-    },
+      util: false
+    }
   },
   module: {
     rules: [
@@ -35,20 +35,20 @@ module.exports = {
         test: require.resolve('jquery'),
         loader: 'expose-loader',
         options: {
-          exposes: ['$', 'jQuery'],
-        },
-      },
-    ],
+          exposes: ['$', 'jQuery']
+        }
+      }
+    ]
   },
   output: {
-    filename: 'main.bundle.js',
+    filename: 'main.bundle.js'
     // path is set at runtime
   },
   optimization: {
     minimizer: [
       new EsbuildPlugin({
-        target: 'es2015',
-      }),
-    ],
-  },
+        target: 'es2015'
+      })
+    ]
+  }
 };
