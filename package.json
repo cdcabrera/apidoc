@@ -78,7 +78,7 @@
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-promise": "^7.2.1",
     "mocha": "^11.5.0"
   }
 }
