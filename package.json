@@ -52,7 +52,7 @@
     "win32"
   ],
   "dependencies": {
-    "commander": "^10.0.0",
+    "commander": "^14.0.0",
     "diff-match-patch": "^1.0.5",
     "esbuild-loader": "^4.3.0",
     "expose-loader": "^4.0.0",
