@@ -70,7 +70,7 @@
     "winston": "^3.17.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.16",
+    "@types/lodash": "^4.17.17",
     "@types/mocha": "^10.0.10",
     "@types/node": "^16.11.9",
     "eslint": "^8.38.0",
@@ -79,6 +79,6 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
-    "mocha": "^11.2.2"
+    "mocha": "^11.5.0"
   }
 }
