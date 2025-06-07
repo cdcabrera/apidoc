@@ -1,5 +1,20 @@
 # apiDoc Changelog
 
+## [2.0.2](https://github.com/cdcabrera/apidoc/compare/feb97a7315473ac52283916aa7369bcff8792167...26a8f4057b8dcf2f9ad19a99b8aa251c2d847817) (2025-06-07)
+
+
+### Builds
+* **deps** bump glob from 7.2.3 to 11.0.2 ([#29](https://github.com/cdcabrera/apidoc/pull/29)) ([26a8f40](https://github.com/cdcabrera/apidoc/commit/26a8f4057b8dcf2f9ad19a99b8aa251c2d847817))
+* **deps-dev** bump @types/node from 16.18.126 to 22.15.30 ([#28](https://github.com/cdcabrera/apidoc/pull/28)) ([b207442](https://github.com/cdcabrera/apidoc/commit/b20744234b1fba90409a530e4900c62934526719))
+* **deps-dev** bump changelog-light from 2.0.6 to 3.0.0 ([#27](https://github.com/cdcabrera/apidoc/pull/27)) ([304fbf1](https://github.com/cdcabrera/apidoc/commit/304fbf1395f8f974e1f69908a0e93fd899facb4d))
+* **deps** markdown-it from 12.3.2 to 14.1.0 ([#26](https://github.com/cdcabrera/apidoc/pull/26)) ([f3de7c5](https://github.com/cdcabrera/apidoc/commit/f3de7c5fc900e53a48b0fb73b63eecb8c56dd52e))
+* **deps-dev** eslint-plugin-n from 17.18.0 to 17.19.0 ([#25](https://github.com/cdcabrera/apidoc/pull/25)) ([9372863](https://github.com/cdcabrera/apidoc/commit/93728630a4f498d0c0ce62e5a7e5e12b055a4821))
+*  dependabot target branch ([#24](https://github.com/cdcabrera/apidoc/pull/24)) ([d57fb43](https://github.com/cdcabrera/apidoc/commit/d57fb4320b44989f23ce3777582472d12de5fbf9))
+* **deps** commander from 10.0.1 to 14.0.0 ([#20](https://github.com/cdcabrera/apidoc/pull/20)) ([c249d03](https://github.com/cdcabrera/apidoc/commit/c249d032c0fd8870908b54310357c3b6322e7e2c))
+* **deps-dev** bump eslint from 9.27.0 to 9.28.0 ([#21](https://github.com/cdcabrera/apidoc/pull/21)) ([1271c46](https://github.com/cdcabrera/apidoc/commit/1271c46f9a6e27c982366ee2b61e0895bf6879f5))
+* **deps** webpack from 5.99.8 to 5.99.9 ([#19](https://github.com/cdcabrera/apidoc/pull/19)) ([0a693d4](https://github.com/cdcabrera/apidoc/commit/0a693d4fc67a0ada6a78a6d9d074ec1e12a9718f))
+* **deps-dev** bump the dev group with 2 updates ([#18](https://github.com/cdcabrera/apidoc/pull/18)) ([c453ed7](https://github.com/cdcabrera/apidoc/commit/c453ed7b5bcf6d76138ee706f2741fb928d3bb96))
+
 ## [2.0.1](https://github.com/cdcabrera/apidoc/compare/4062887109807e5f8887903b8ec2541625960ba5...a52df38b8ca3f753acbc0042e5581ecfbf0af487) (2025-05-27)
 
 
