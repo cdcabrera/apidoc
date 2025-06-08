@@ -23,5 +23,5 @@ export const nl = {
   url: 'url',
   Copy: 'Kopiëren',
   'Press Ctrl+C to copy': 'Druk op Ctrl+C om te kopiëren',
-  'copied!': 'Gekopieerd!',
+  'copied!': 'Gekopieerd!'
 };

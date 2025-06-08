@@ -42,7 +42,7 @@ const locales = {
   vi: vi,
   // for chinese, allow cn, zh and zh_cn
   zh: zhCn,
-  zh_cn: zhCn,
+  zh_cn: zhCn
 };
 
 // e.g. en fr pl
@@ -50,13 +50,15 @@ export const lang = (window.navigator.language ?? 'en-GB').toLowerCase().substr(
 
 export let locale = locales[lang] ? locales[lang] : locales.en;
 
-export function __ (text) {
+export function __(text) {
   const index = locale[text];
-  if (index === undefined) { return text; }
+  if (index === undefined) {
+    return text;
+  }
   return index;
 }
 
-export function setLanguage (language) {
+export function setLanguage(language) {
   if (!Object.prototype.hasOwnProperty.call(locales, language)) {
     throw new Error(`Invalid value for language setting! Available values are ${Object.keys(locales).join(',')}`);
   }

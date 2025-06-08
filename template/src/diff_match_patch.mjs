@@ -1,16 +1,16 @@
 import _DiffMatchPatch from 'diff-match-patch';
 
 export default class DiffMatchPatch extends _DiffMatchPatch {
-  constructor (testMode) {
+  constructor(testMode) {
     super();
     this.testMode = testMode;
   }
 
-  diffMain (text1, text2, optChecklines, optDeadline) {
+  diffMain(text1, text2, optChecklines, optDeadline) {
     return super.diff_main(this._stripHtml(text1), this._stripHtml(text2), optChecklines, optDeadline);
   }
 
-  diffLineMode (text1, text2) {
+  diffLineMode(text1, text2) {
     const a = this.diff_linesToChars_(text1, text2);
     const lineText1 = a.chars1;
     const lineText2 = a.chars2;
@@ -20,7 +20,7 @@ export default class DiffMatchPatch extends _DiffMatchPatch {
     return diffs;
   }
 
-  diffPrettyHtml (diffs) {
+  diffPrettyHtml(diffs) {
     const html = [];
     const patternAmp = /&/g;
     const patternLt = /</g;
@@ -29,8 +29,11 @@ export default class DiffMatchPatch extends _DiffMatchPatch {
     for (let x = 0; x < diffs.length; x++) {
       const op = diffs[x][0]; // Operation (insert, delete, equal)
       const data = diffs[x][1]; // Text of change.
-      const text = data.replace(patternAmp, '&amp;').replace(patternLt, '&lt;')
-        .replace(patternGt, '&gt;').replace(patternPara, '&para;<br>');
+      const text = data
+        .replace(patternAmp, '&amp;')
+        .replace(patternLt, '&lt;')
+        .replace(patternGt, '&gt;')
+        .replace(patternPara, '&para;<br>');
       switch (op) {
         case _DiffMatchPatch.DIFF_INSERT:
           html[x] = '<ins>' + text + '</ins>';
@@ -46,7 +49,7 @@ export default class DiffMatchPatch extends _DiffMatchPatch {
     return html.join('');
   }
 
-  diffPrettyCode (diffs) {
+  diffPrettyCode(diffs) {
     const html = [];
     const patternPara = /\n/g;
     for (let x = 0; x < diffs.length; x++) {
@@ -68,13 +71,15 @@ export default class DiffMatchPatch extends _DiffMatchPatch {
     return html.join('');
   }
 
-  diffCleanupSemantic (diffs) {
+  diffCleanupSemantic(diffs) {
     return this.diff_cleanupSemantic(diffs);
   }
 
-  _stripHtml (html) {
+  _stripHtml(html) {
     // no document object with CLI when running tests
-    if (this.testMode) { return html; }
+    if (this.testMode) {
+      return html;
+    }
     const div = document.createElement('div');
     div.innerHTML = html;
     return div.textContent || div.innerText || '';

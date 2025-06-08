@@ -37,5 +37,5 @@ export const zhCn = {
   url: '地址',
   Copy: '复制文本',
   'Press Ctrl+C to copy': '按Ctrl+C复制',
-  'copied!': '文本已复制!',
+  'copied!': '文本已复制!'
 };

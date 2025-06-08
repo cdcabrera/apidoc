@@ -23,5 +23,5 @@ export const ru = {
   url: 'URL',
   Copy: 'Скопировать',
   'Press Ctrl+C to copy': 'Нажмите Ctrl+C, чтобы скопировать',
-  'copied!': 'Скопировано!',
+  'copied!': 'Скопировано!'
 };

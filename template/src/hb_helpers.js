@@ -19,7 +19,7 @@ import { body2json } from './jsonifier';
 import DiffMatchPatch from './diff_match_patch';
 
 // this will register all helpers
-export function register () {
+export function register() {
   /**
    * Return a text as markdown.
    * Currently only a little helper to replace apidoc-inline Links (#Group:Name).
@@ -30,7 +30,7 @@ export function register () {
     if (!text) {
       return text;
     }
-    text = text.replace(/((\[(.*?)\])?\(#)((.+?):(.+?))(\))/mg, function (match, p1, p2, p3, p4, p5, p6) {
+    text = text.replace(/((\[(.*?)\])?\(#)((.+?):(.+?))(\))/gm, function (match, p1, p2, p3, p4, p5, p6) {
       const link = p3 || p5 + '/' + p6;
       return '<a href="#api-' + p5 + '-' + p6 + '">' + link + '</a>';
     });
@@ -56,8 +56,8 @@ export function register () {
   });
 
   /**
-     * start/stop timer for simple performance check.
-     */
+   * start/stop timer for simple performance check.
+   */
   let timer;
   Handlebars.registerHelper('startTimer', function () {
     timer = new Date();
@@ -70,26 +70,26 @@ export function register () {
   });
 
   /**
-     * Return localized Text.
-     * @param string text
-     */
+   * Return localized Text.
+   * @param string text
+   */
   Handlebars.registerHelper('__', function (text) {
     return __(text);
   });
 
   /**
-     * Console log.
-     * @param mixed obj
-     */
+   * Console log.
+   * @param mixed obj
+   */
   Handlebars.registerHelper('cl', function (obj) {
     console.log(obj);
     return '';
   });
 
   /**
-     * Replace underscore with space.
-     * @param string text
-     */
+   * Replace underscore with space.
+   * @param string text
+   */
   Handlebars.registerHelper('underscoreToSpace', function (text) {
     return text.replace(/(_+)/g, ' ');
   });
@@ -103,21 +103,23 @@ export function register () {
   });
 
   /**
-     *
-     */
+   *
+   */
   Handlebars.registerHelper('assign', function (name) {
     if (arguments.length > 0) {
       const type = typeof arguments[1];
       let arg = null;
       if (type === 'string' || type === 'number' || type === 'boolean') arg = arguments[1];
-      Handlebars.registerHelper(name, function () { return arg; });
+      Handlebars.registerHelper(name, function () {
+        return arg;
+      });
     }
     return '';
   });
 
   /**
-     *
-     */
+   *
+   */
   Handlebars.registerHelper('nl2br', function (text) {
     return _handlebarsNewlineToBreak(text);
   });
@@ -162,8 +164,8 @@ export function register () {
   });
 
   /**
-     *
-     */
+   *
+   */
   const templateCache = {};
   Handlebars.registerHelper('subTemplate', function (name, sourceContext) {
     if (!templateCache[name]) {
@@ -206,7 +208,9 @@ export function register () {
       ret += `[${field.substring(parentNode.path.length + 1)}]`;
     } else {
       ret = field;
-      if (isArray) { ret += '[]'; }
+      if (isArray) {
+        ret += '[]';
+      }
     }
     return ret;
   });
@@ -219,24 +223,26 @@ export function register () {
    */
   Handlebars.registerHelper('nestObject', function (entry) {
     const { parentNode, field } = entry;
-    return parentNode ? '&nbsp;&nbsp;'.repeat(parentNode.path.split('.').length) + field.substring(parentNode.path.length + 1) : field;
+    return parentNode
+      ? '&nbsp;&nbsp;'.repeat(parentNode.path.split('.').length) + field.substring(parentNode.path.length + 1)
+      : field;
   });
 
   /**
-     * Convert Newline to HTML-Break (nl2br).
-     *
-     * @param {String} text
-     * @returns {String}
-     */
-  function _handlebarsNewlineToBreak (text) {
+   * Convert Newline to HTML-Break (nl2br).
+   *
+   * @param {String} text
+   * @returns {String}
+   */
+  function _handlebarsNewlineToBreak(text) {
     return ('' + text).replace(/(?:^|<\/pre>)[^]*?(?:<pre>|$)/g, m => {
       return m.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + '<br>' + '$2');
     });
   }
 
   /**
-     *
-     */
+   *
+   */
   Handlebars.registerHelper('each_compare_list_field', function (source, compare, options) {
     const fieldName = options.hash.field;
     const newSource = [];
@@ -260,8 +266,8 @@ export function register () {
   });
 
   /**
-     *
-     */
+   *
+   */
   Handlebars.registerHelper('each_compare_keys', function (source, compare, options) {
     const newSource = [];
     if (source) {
@@ -303,9 +309,7 @@ export function register () {
     if (type === 'json') {
       try {
         return JSON.stringify(JSON.parse(source.trim()), null, '    ');
-      } catch (e) {
-
-      }
+      } catch (e) {}
     }
     return source;
   });
@@ -316,9 +320,13 @@ export function register () {
     if (source === compare) {
       ds = source;
     } else {
-      if (!source) { return compare; }
+      if (!source) {
+        return compare;
+      }
 
-      if (!compare) { return source; }
+      if (!compare) {
+        return source;
+      }
 
       const diffMatchPatch = new DiffMatchPatch();
       if (options === 'code') {
@@ -330,14 +338,16 @@ export function register () {
         ds = diffMatchPatch.diffPrettyHtml(d);
         ds = ds.replace(/&para;/gm, '');
 
-        if (options === 'nl2br') { ds = _handlebarsNewlineToBreak(ds); }
+        if (options === 'nl2br') {
+          ds = _handlebarsNewlineToBreak(ds);
+        }
       }
     }
 
     return ds;
   });
 
-  function _handlebarsEachCompared (fieldname, source, compare, options) {
+  function _handlebarsEachCompared(fieldname, source, compare, options) {
     const dataList = [];
     let index = 0;
     if (source) {
@@ -350,7 +360,7 @@ export function register () {
                 typeSame: true,
                 source: sourceEntry,
                 compare: compareEntry,
-                index: index,
+                index: index
               };
               dataList.push(data);
               found = true;
@@ -362,7 +372,7 @@ export function register () {
           const data = {
             typeIns: true,
             source: sourceEntry,
-            index: index,
+            index: index
           };
           dataList.push(data);
           index++;
@@ -375,14 +385,16 @@ export function register () {
         let found = false;
         if (source) {
           source.forEach(function (sourceEntry) {
-            if (sourceEntry[fieldname] === compareEntry[fieldname]) { found = true; }
+            if (sourceEntry[fieldname] === compareEntry[fieldname]) {
+              found = true;
+            }
           });
         }
         if (!found) {
           const data = {
             typeDel: true,
             compare: compareEntry,
-            index: index,
+            index: index
           };
           dataList.push(data);
           index++;
@@ -393,7 +405,9 @@ export function register () {
     let ret = '';
     const length = dataList.length;
     for (const index in dataList) {
-      if (parseInt(index, 10) === length - 1) { dataList[index]._last = true; }
+      if (parseInt(index, 10) === length - 1) {
+        dataList[index]._last = true;
+      }
       ret = ret + options.fn(dataList[index]);
     }
     return ret;

@@ -16,7 +16,7 @@ import Prism from 'prismjs';
 // json language
 import 'prismjs/components/prism-json';
 
-export function initSampleRequest () {
+export function initSampleRequest() {
   // Button send
   $('.sample-request-send').off('click');
   $('.sample-request-send').on('click', function (e) {
@@ -41,7 +41,7 @@ export function initSampleRequest () {
 }
 
 // Converts path params in the {param} format to the accepted :param format, used before inserting the URL params.
-function convertPathParams (url) {
+function convertPathParams(url) {
   return url.replace(/{(.+?)}/g, ':$1');
 }
 /**
@@ -49,7 +49,7 @@ function convertPathParams (url) {
  * Based on query parameters collected
  * @return string
  */
-function getHydratedUrl (root, queryParameters) {
+function getHydratedUrl(root, queryParameters) {
   // grab user-inputted URL
   const dryUrl = root.find('.sample-request-url').val();
   const UrlProc = new UrlProcessor();
@@ -70,7 +70,7 @@ function getHydratedUrl (root, queryParameters) {
  *   "url": "http://api.example.org/user/3",
  * }
  */
-function collectValues (root) {
+function collectValues(root) {
   const parameters = {};
   ['header', 'query', 'body'].forEach(family => {
     // key: parameter name (e.g. 'id'), value: the content of the input
@@ -113,7 +113,7 @@ function collectValues (root) {
   return parameters;
 }
 
-function sendSampleRequest (group, name, version, method) {
+function sendSampleRequest(group, name, version, method) {
   // root is the current sample request block, all is scoped within this block
   const root = $(`article[data-group="${group}"][data-name="${name}"][data-version="${version}"]`);
 
@@ -158,7 +158,7 @@ function sendSampleRequest (group, name, version, method) {
   root.find('.sample-request-response').fadeTo(200, 1);
   root.find('.sample-request-response-json').html('Loading...');
 
-  function displaySuccess (data, status, jqXHR) {
+  function displaySuccess(data, status, jqXHR) {
     let jsonResponse;
     try {
       jsonResponse = JSON.parse(jqXHR.responseText);
@@ -170,7 +170,7 @@ function sendSampleRequest (group, name, version, method) {
     Prism.highlightAll();
   }
 
-  function displayError (jqXHR, textStatus, error) {
+  function displayError(jqXHR, textStatus, error) {
     let message = 'Error ' + jqXHR.status + ': ' + error;
     let jsonResponse;
     try {
@@ -180,10 +180,14 @@ function sendSampleRequest (group, name, version, method) {
       jsonResponse = jqXHR.responseText;
     }
 
-    if (jsonResponse) { message += '\n' + jsonResponse; }
+    if (jsonResponse) {
+      message += '\n' + jsonResponse;
+    }
 
     // flicker on previous error to make clear that there is a new response
-    if (root.find('.sample-request-response').is(':visible')) { root.find('.sample-request-response').fadeTo(1, 0.1); }
+    if (root.find('.sample-request-response').is(':visible')) {
+      root.find('.sample-request-response').fadeTo(1, 0.1);
+    }
 
     root.find('.sample-request-response').fadeTo(250, 1);
     root.find('.sample-request-response-json').text(message);
@@ -191,7 +195,7 @@ function sendSampleRequest (group, name, version, method) {
   }
 }
 
-function clearSampleRequest (group, name, version) {
+function clearSampleRequest(group, name, version) {
   const root = $('article[data-group="' + group + '"][data-name="' + name + '"][data-version="' + version + '"]');
 
   // hide sample response

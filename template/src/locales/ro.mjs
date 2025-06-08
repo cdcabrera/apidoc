@@ -23,5 +23,5 @@ export const ro = {
   url: 'url',
   Copy: 'Copie',
   'Press Ctrl+C to copy': 'Apăsați Ctrl+C pentru a copia',
-  'copied!': 'Copiat!',
+  'copied!': 'Copiat!'
 };

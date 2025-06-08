@@ -49,7 +49,7 @@ const fieldsToJson = items => {
     // Object / array of Object
     if (type.indexOf('Object') !== -1) {
       _set(parentPtr, key, isArray ? [] : {});
-    // all types / array of types
+      // all types / array of types
     } else {
       _set(parentPtr, key, isArray ? [] : item[1]);
     }
@@ -58,7 +58,9 @@ const fieldsToJson = items => {
   // if result contains only one property that is optional, and this is an
   // array of objects, remove the key
   const objKeys = Object.keys(obj);
-  if (objKeys.length === 1 && items[0][0].optional) { obj = obj[objKeys[0]]; }
+  if (objKeys.length === 1 && items[0][0].optional) {
+    obj = obj[objKeys[0]];
+  }
 
   return beautify(obj);
 };
@@ -66,11 +68,11 @@ const fieldsToJson = items => {
 /**
  * Stringify an obj to JSON with spaces
  */
-export function beautify (obj) {
+export function beautify(obj) {
   return JSON.stringify(obj, null, 4);
 }
 
-export function body2json (context) {
+export function body2json(context) {
   // build an array of fields with their type
   const fields = [];
   context.forEach(entry => {
