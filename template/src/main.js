@@ -48,8 +48,10 @@ function init() {
   let api = API_DATA; // eslint-disable-line no-undef
   const apiProject = API_PROJECT; // eslint-disable-line no-undef
 
-  // HANDLEBARS //
-  // register HandleBars helper functions
+  /*
+   * HANDLEBARS //
+   * register HandleBars helper functions
+   */
   register();
 
   // Compile templates
@@ -76,10 +78,12 @@ function init() {
     setLanguage(apiProject.template.forceLanguage);
   }
 
-  //
-  // Data transform
-  //
-  // grouped by group
+  /*
+   *
+   * Data transform
+   *
+   * grouped by group
+   */
   const apiByGroup = groupBy(api, entry => {
     return entry.group;
   });
@@ -92,9 +96,11 @@ function init() {
     });
   });
 
-  //
-  // sort api within a group by title ASC and custom order
-  //
+  /*
+   *
+   * sort api within a group by title ASC and custom order
+   *
+   */
   const newList = [];
   // const umlauts = { ä: 'ae', ü: 'ue', ö: 'oe', ß: 'ss' }; // TODO: remove in version 1.0
   $.each(apiByGroupAndName, (index, groupEntries) => {
@@ -128,9 +134,11 @@ function init() {
   // api overwrite with ordered list
   api = newList;
 
-  //
-  // Group- and Versionlists
-  //
+  /*
+   *
+   * Group- and Versionlists
+   *
+   */
   let apiGroups = {};
   const apiGroupTitles = {};
   let apiVersions = {};
@@ -156,9 +164,11 @@ function init() {
   apiVersions.sort(semver.compare);
   apiVersions.reverse();
 
-  //
-  // create Navigationlist
-  //
+  /*
+   *
+   * create Navigationlist
+   *
+   */
   const nav = [];
   apiGroups.forEach(group => {
     // Mainmenu entry
@@ -305,9 +315,11 @@ function init() {
     }
   }
 
-  //
-  // Render Sections and Articles
-  //
+  /*
+   *
+   * Render Sections and Articles
+   *
+   */
   const articleVersions = {};
   let content = '';
   apiGroups.forEach(function (groupEntry) {
@@ -397,8 +409,10 @@ function init() {
     $('body').scrollspy({ target: '#scrollingNav' });
   }
 
-  // when we click on an input that was previously highlighted because it was empty, remove the red border
-  // also listen for change because for numbers you can just click the browser's up/down arrow and it will not focus
+  /*
+   * when we click on an input that was previously highlighted because it was empty, remove the red border
+   * also listen for change because for numbers you can just click the browser's up/down arrow and it will not focus
+   */
   $('.form-control').on('focus change', function () {
     $(this).removeClass('border-danger');
   });
@@ -541,10 +555,12 @@ function init() {
     }
   }
 
-  //
-  // HTML-Template specific jQuery-Functions
-  //
-  // Change Main Version
+  /*
+   *
+   * HTML-Template specific jQuery-Functions
+   *
+   * Change Main Version
+   */
   function setMainVersion(selectedVersion) {
     if (typeof selectedVersion === 'undefined') {
       selectedVersion = $('#version strong').html();
@@ -614,11 +630,13 @@ function init() {
     $('#compareAllWithPredecessor').trigger('click');
   }
 
-  // Quick jump on page load to hash position.
-  // Should happen after setting the main version
-  // and after triggering the click on the compare button,
-  // as these actions modify the content
-  // and would make it jump to the wrong position or not jump at all.
+  /*
+   * Quick jump on page load to hash position.
+   * Should happen after setting the main version
+   * and after triggering the click on the compare button,
+   * as these actions modify the content
+   * and would make it jump to the wrong position or not jump at all.
+   */
   if (window.location.hash) {
     const id = decodeURI(window.location.hash);
     if ($(id).length > 0) {
@@ -728,8 +746,10 @@ function init() {
         versions: articleVersions[group][name]
       };
 
-      // add unique id
-      // TODO: replace all group-name-version in template with id.
+      /*
+       * add unique id
+       * TODO: replace all group-name-version in template with id.
+       */
       fields.article.id = fields.article.group + '-' + fields.article.name + '-' + fields.article.version;
       fields.article.id = fields.article.id.replace(/\./g, '_');
 
@@ -826,8 +846,10 @@ function init() {
    * Add article settings.
    */
   function addArticleSettings(fields, entry) {
-    // add unique id
-    // TODO: replace all group-name-version in template with id.
+    /*
+     * add unique id
+     * TODO: replace all group-name-version in template with id.
+     */
     fields.id = fields.article.group + '-' + fields.article.name + '-' + fields.article.version;
     fields.id = fields.id.replace(/\./g, '_');
 

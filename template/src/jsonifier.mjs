@@ -55,8 +55,10 @@ const fieldsToJson = items => {
     }
   });
 
-  // if result contains only one property that is optional, and this is an
-  // array of objects, remove the key
+  /*
+   * if result contains only one property that is optional, and this is an
+   * array of objects, remove the key
+   */
   const objKeys = Object.keys(obj);
   if (objKeys.length === 1 && items[0][0].optional) {
     obj = obj[objKeys[0]];

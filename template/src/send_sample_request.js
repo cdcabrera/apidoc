@@ -53,8 +53,10 @@ function getHydratedUrl(root, queryParameters) {
   // grab user-inputted URL
   const dryUrl = root.find('.sample-request-url').val();
   const UrlProc = new UrlProcessor();
-  // Convert {param} form to :param
-  // TODO check if this is necessary, do we have urls with {param} in it?
+  /*
+   * Convert {param} form to :param
+   * TODO check if this is necessary, do we have urls with {param} in it?
+   */
   const url = convertPathParams(dryUrl);
   return UrlProc.hydrate(url, queryParameters);
 }
@@ -85,8 +87,10 @@ function collectValues(root) {
           if (el.checked) {
             value = 'on';
           } else {
-            // don't send anything for checkbox if it's not checked
-            // without this an empty string will be sent along
+            /*
+             * don't send anything for checkbox if it's not checked
+             * without this an empty string will be sent along
+             */
             return true;
           }
         }
@@ -128,23 +132,31 @@ function sendSampleRequest(group, name, version, method) {
   requestParams.headers = parameters.header;
 
   if (requestParams.headers['Content-Type'] === 'application/json') {
-    // TODO check json is valid?
-    // or maybe have a direct feedback on the textarea onkeypress for valid/invalid json
+    /*
+     * TODO check json is valid?
+     * or maybe have a direct feedback on the textarea onkeypress for valid/invalid json
+     */
     requestParams.data = parameters.body;
   } else if (requestParams.headers['Content-Type'] === 'multipart/form-data') {
     const formData = new FormData();
-    // Note: here we don't try to handle nested fields for form-data because it doesn't make sense
-    // if you need to send non-flat data, use json, not form-data which is a flat key/value structure
+    /*
+     * Note: here we don't try to handle nested fields for form-data because it doesn't make sense
+     * if you need to send non-flat data, use json, not form-data which is a flat key/value structure
+     */
     for (const [name, value] of Object.entries(parameters.body)) {
       formData.append(name, value);
     }
     requestParams.data = formData;
     requestParams.processData = false;
-    // With no content-type header, browser will know it needs to generate a proper content-type for
-    // the form data when sending it. Fix #1122
+    /*
+     * With no content-type header, browser will know it needs to generate a proper content-type for
+     * the form data when sending it. Fix #1122
+     */
     delete requestParams.headers['Content-Type'];
-    // As of jQuery 1.6 you can pass false to tell jQuery to not set any content type header.
-    // https://api.jquery.com/jquery.ajax/
+    /*
+     * As of jQuery 1.6 you can pass false to tell jQuery to not set any content type header.
+     * https://api.jquery.com/jquery.ajax/
+     */
     requestParams.contentType = false;
   }
 
@@ -204,9 +216,11 @@ function clearSampleRequest(group, name, version) {
 
   // reset value of parameters
   root.find('.sample-request-input').each((idx, el) => {
-    // placeholder is the name of the input if there are no default value
-    // so replace by the placeholder if it's different (input has a default value)
-    // or empty string if there is no default value
+    /*
+     * placeholder is the name of the input if there are no default value
+     * so replace by the placeholder if it's different (input has a default value)
+     * or empty string if there is no default value
+     */
     el.value = el.placeholder !== el.dataset.name ? el.placeholder : '';
   });
 
