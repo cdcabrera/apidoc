@@ -6,6 +6,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
+import jQuery from 'jquery';
 
 +function ($) {
   'use strict';

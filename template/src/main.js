@@ -1,13 +1,18 @@
 /** apidoc template main.js */
 
-// with webpack 5 we can use css-loader
-// import './src/css/style.css';
+// CSS imports for bundling
+import './vendor/bootstrap/css/bootstrap.css';
+import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/plugins/toolbar/prism-toolbar.css';
+import 'prismjs/plugins/diff-highlight/prism-diff-highlight.css';
+import './css/main.css';
 
 import $ from 'jquery';
 import { groupBy, extend, some } from 'lodash';
 import semver from 'semver';
 import Handlebars from 'handlebars';
-// bootstrap plugins
+
+// Bootstrap jQuery plugins
 import './vendor/bootstrap/js/dropdown';
 import './vendor/bootstrap/js/tooltip';
 import './vendor/bootstrap/js/popover';
@@ -39,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function init() {
-  // the data is injected at compile time by webpack
+  // bundler (webpack, esbuild, etc) injected data
   let api = API_DATA; // eslint-disable-line no-undef
   const apiProject = API_PROJECT; // eslint-disable-line no-undef
 

@@ -25,7 +25,7 @@ export default [
         ...globals.node,
         ...globals.jquery
       },
-      ecmaVersion: 2021
+      ecmaVersion: 2022
     },
     rules: {
       'comma-dangle': 0,

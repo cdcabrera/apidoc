@@ -54,8 +54,7 @@
   "dependencies": {
     "commander": "^14.0.0",
     "diff-match-patch": "^1.0.5",
-    "esbuild-loader": "^4.3.0",
-    "expose-loader": "^5.0.1",
+    "esbuild": "^0.25.5",
     "fs-extra": "^11.3.0",
     "glob": "^11.0.3",
     "handlebars": "^4.7.8",
@@ -67,9 +66,6 @@
     "nodemon": "^3.1.10",
     "prismjs": "^1.30.0",
     "semver": "^7.7.2",
-    "style-loader": "^4.0.0",
-    "webpack": "^5.99.9",
-    "webpack-cli": "^6.0.1",
     "winston": "^3.17.0"
   },
   "devDependencies": {

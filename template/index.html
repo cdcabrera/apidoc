@@ -5,15 +5,11 @@
   <meta name="description" content="__API_DESCRIPTION__">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link href="assets/bootstrap.min.css?__API_CACHE_BUSTING_QUERY_PARAM__" rel="stylesheet" media="screen">
-  <link href="assets/prism.css?__API_CACHE_BUSTING_QUERY_PARAM__" rel="stylesheet" />
-  <link href="assets/prism-toolbar.css?__API_CACHE_BUSTING_QUERY_PARAM__" rel="stylesheet" />
-  <link href="assets/prism-diff-highlight.css?__API_CACHE_BUSTING_QUERY_PARAM__" rel="stylesheet" />
-  <link href="assets/main.css?__API_CACHE_BUSTING_QUERY_PARAM__" rel="stylesheet" media="screen, print">
   <link href="assets/favicon.ico?__API_CACHE_BUSTING_QUERY_PARAM__" rel="icon" type="image/x-icon">
   <link href="assets/apple-touch-icon.png?__API_CACHE_BUSTING_QUERY_PARAM__" rel="apple-touch-icon" sizes="180x180">
   <link href="assets/favicon-32x32.png?__API_CACHE_BUSTING_QUERY_PARAM__" rel="icon" type="image/png" sizes="32x32">
   <link href="assets/favicon-16x16.png?__API_CACHE_BUSTING_QUERY_PARAM__" rel="icon" type="image/png" sizes="16x16">
+  <link href="assets/main.bundle.css?__API_CACHE_BUSTING_QUERY_PARAM__" rel="stylesheet" />
 </head>
 
 <body class="container-fluid">
@@ -155,7 +151,7 @@
       <p>{{{nl2br article.description}}}</p>
     {{/if}}
     <span class="method meth-{{toLowerCase article.type}}">{{article.type}}</span>
-    <pre 
+    <pre
       data-type="{{toLowerCase article.type}}"
       data-prismjs-copy="{{__ "Copy"}}"
       data-prismjs-copy-error="{{__ "Press Ctrl+C to copy"}}"
@@ -189,7 +185,7 @@
       <div class="tab-content">
       {{#each article.examples}}
         <div class="tab-pane{{#ifCond @index '==' 0}} active{{/ifCond}}" id="examples-{{../id}}-{{@index}}">
-          <pre 
+          <pre
             data-type="{{type}}"
             data-prismjs-copy="{{__ "Copy"}}"
             data-prismjs-copy-error="{{__ "Press Ctrl+C to copy"}}"
@@ -366,7 +362,7 @@
       <div class="tab-content">
       {{#each params.examples}}
         <div class="tab-pane{{#ifCond @index '==' 0}} active{{/ifCond}}" id="{{../section}}-examples-{{../id}}-{{@index}}">
-        <pre 
+        <pre
           data-type="{{type}}"
           data-prismjs-copy="{{__ "Copy"}}"
           data-prismjs-copy-error="{{__ "Press Ctrl+C to copy"}}"
@@ -589,7 +585,7 @@
               {{__ "Response"}}
               <button class="btn btn-default btn-xs pull-right sample-request-clear">X</button>
             </h3>
-            <pre 
+            <pre
               data-type="json"
               data-prismjs-copy="{{__ "Copy"}}"
               data-prismjs-copy-error="{{__ "Press Ctrl+C to copy"}}"
@@ -636,8 +632,8 @@
     {{/if}}
 
     <span class="method meth-{{toLowerCase compare.type}}">{{compare.type}}</span>
-    <pre 
-      data-type="{{toLowerCase article.type}}" 
+    <pre
+      data-type="{{toLowerCase article.type}}"
       data-prismjs-copy="{{__ "Copy"}}"
       data-prismjs-copy-error="{{__ "Press Ctrl+C to copy"}}"
       data-prismjs-copy-success="{{__ "copied!"}}"
@@ -673,7 +669,7 @@
 
       {{#if typeSame}}
         <div class="tab-pane{{#ifCond index '==' 0}} active{{/ifCond}}" id="compare-examples-{{../article.id}}-{{index}}">
-          <pre 
+          <pre
             data-type="{{source.type}}"
             data-prismjs-copy="{{__ "Copy"}}"
             data-prismjs-copy-error="{{__ "Press Ctrl+C to copy"}}"
@@ -684,7 +680,7 @@
 
       {{#if typeIns}}
         <div class="tab-pane{{#ifCond index '==' 0}} active{{/ifCond}}" id="compare-examples-{{../article.id}}-{{index}}">
-          <pre 
+          <pre
             data-type="{{source.type}}"
             data-prismjs-copy="{{__ "Copy"}}"
             data-prismjs-copy-error="{{__ "Press Ctrl+C to copy"}}"
@@ -695,7 +691,7 @@
 
       {{#if typeDel}}
         <div class="tab-pane{{#ifCond index '==' 0}} active{{/ifCond}}" id="compare-examples-{{../article.id}}-{{index}}">
-          <pre 
+          <pre
             data-type="{{compare.type}}"
             data-prismjs-copy="{{__ "Copy"}}"
             data-prismjs-copy-error="{{__ "Press Ctrl+C to copy"}}"
@@ -709,8 +705,8 @@
 
     {{subTemplate "article-compare-param-block" source=article.header compare=compare.header _hasType=_hasTypeInHeaderFields section="header"}}
     {{subTemplate "article-compare-param-block" source=article.parameter compare=compare.parameter _hasType=_hasTypeInParameterFields section="parameter"}}
-    {{subTemplate "article-compare-query-block" source=article.query compare=compare.query _hasType=_hasTypeInParameterFields section="query"}} 
-    {{subTemplate "article-compare-body-block" source=article.body compare=compare.body _hasType=_hasTypeInParameterFields section="body"}} 
+    {{subTemplate "article-compare-query-block" source=article.query compare=compare.query _hasType=_hasTypeInParameterFields section="query"}}
+    {{subTemplate "article-compare-body-block" source=article.body compare=compare.body _hasType=_hasTypeInParameterFields section="body"}}
     {{subTemplate "article-compare-param-block" source=article.success compare=compare.success _hasType=_hasTypeInSuccessFields section="success"}}
     {{subTemplate "article-compare-param-block" source=article.error compare=compare.error _col1="Name" _hasType=_hasTypeInErrorFields section="error"}}
 
@@ -862,7 +858,7 @@
 
       {{#if typeSame}}
         <div class="tab-pane{{#ifCond index '==' 0}} active{{/ifCond}}" id="{{../section}}-compare-examples-{{../article.id}}-{{index}}">
-          <pre 
+          <pre
             data-type="{{source.type}}"
             data-prismjs-copy="{{__ "Copy"}}"
             data-prismjs-copy-error="{{__ "Press Ctrl+C to copy"}}"
@@ -873,7 +869,7 @@
 
       {{#if typeIns}}
         <div class="tab-pane{{#ifCond index '==' 0}} active{{/ifCond}}" id="{{../section}}-compare-examples-{{../article.id}}-{{index}}">
-          <pre 
+          <pre
             data-type="{{source.type}}"
             data-prismjs-copy="{{__ "Copy"}}"
             data-prismjs-copy-error="{{__ "Press Ctrl+C to copy"}}"
@@ -884,7 +880,7 @@
 
       {{#if typeDel}}
         <div class="tab-pane{{#ifCond index '==' 0}} active{{/ifCond}}" id="{{../section}}-compare-examples-{{../article.id}}-{{index}}">
-          <pre 
+          <pre
             data-type="{{compare.type}}"
             data-prismjs-copy="{{__ "Copy"}}"
             data-prismjs-copy-error="{{__ "Press Ctrl+C to copy"}}"
