@@ -46,12 +46,12 @@ input[type="date"] {
  * ------------------------------------------------------------------------------------------ */
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('./glyphicons-halflings-regular.eot');
-  src: url('./glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-    url('./glyphicons-halflings-regular.woff') format('woff'),
-    url('./glyphicons-halflings-regular.woff2') format('woff2'),
-    url('./glyphicons-halflings-regular.ttf') format('truetype'),
-    url('./glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+  src: url('../vendor/bootstrap/fonts/glyphicons-halflings-regular.eot');
+  src: url('../vendor/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('../vendor/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'),
+    url('../vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+    url('../vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('../vendor/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
 
 /* Hide vertical scrollbar on off canvas animation ("left" positioning) */
@@ -305,7 +305,7 @@ td.code {
     background: var(--dark-gray);
     width: 100%;
   }
-  
+
   .nav-toggle .btn {
     margin: 10px 14px;
   }
@@ -369,7 +369,7 @@ div.code-toolbar.code-toolbar > .toolbar {
   top: .4rem;
   right: .4rem;
 }
-div.code-toolbar.code-toolbar > .toolbar > .toolbar-item > button:hover, 
+div.code-toolbar.code-toolbar > .toolbar > .toolbar-item > button:hover,
 div.code-toolbar.code-toolbar > .toolbar > .toolbar-item > button:focus {
   color: var(--white);
 }
