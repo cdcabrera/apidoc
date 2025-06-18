@@ -2,7 +2,7 @@
  * CLI tests
  */
 const exec = require('child_process').exec;
-const pkgjson = require('../package.json');
+const pkgJson = require('../package.json');
 const assert = require('assert');
 
 describe('test cli options', function () {
@@ -13,7 +13,7 @@ describe('test cli options', function () {
       if (err) { throw err; }
 
       if (stderr) { throw stderr; }
-      assert.strictEqual(stdout.trim('\n'), pkgjson.version);
+      assert.strictEqual(stdout.trim('\n'), pkgJson.version);
 
       done();
     });

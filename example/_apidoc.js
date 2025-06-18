@@ -28,7 +28,7 @@
 // ------------------------------------------------------------------------------------------
 /**
  * @apiDefine admin Admin access rights needed.
- * Optionally you can write here further Informations about the permission.
+ * Optionally, you can write here more information about the permission.
  *
  * An "apiDefinePermission"-block can have an "apiVersion", so you can attach the block to a specific version.
  *
@@ -96,7 +96,7 @@
  * @apiPermission none
  *
  * @apiDescription In this case "apiErrorStructure" is defined and used.
- * Define blocks with params that will be used in several functions, so you dont have to rewrite them.
+ * Define blocks with params that will be used in several functions, so you don't have to rewrite them.
  *
  * @apiBody {String} name Name of the User.
  *

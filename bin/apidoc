@@ -50,8 +50,8 @@ function transformToObject(filters) {
 const program = new Command();
 
 // set the version from package.json so it is available with --version
-const pkgjson = require(path.join('..', 'package.json'));
-program.version(pkgjson.version);
+const pkgJson = require(path.join('..', 'package.json'));
+program.version(pkgJson.version);
 
 program
   .option('-c, --config <config>', 'Path to config file (json or javascript).', '')
@@ -163,7 +163,7 @@ if (options.verbose && options.logFormat === 'simple') {
   / _' | '_ \\| |/ _' |/ _ \\ / __|
  | (_| | |_) | | (_| | (_) | (__
   \\__,_| .__/|_|\\__,_|\\___/ \\___|
-       |_|                v${pkgjson.version}
+       |_|                v${pkgJson.version}
    `;
   console.info(asciiArt);
 }
