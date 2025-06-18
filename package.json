@@ -28,6 +28,7 @@
     "eslint": "eslint",
     "pre-commit": "npm run eslint && npm run test",
     "release": "changelog --non-cc --link-url https://github.com/cdcabrera/apidoc.git",
+    "container:build": "podman build -t apidoc/apidoc .",
     "serve:open": "xdg-open $PROTOCOL://$HOST:$PORT/ || open $PROTOCOL://$HOST:$PORT/",
     "serve:stop": "podman stop apidoc",
     "serve": "export PROTOCOL=http; export HOST=127.0.0.1; export PORT=8080; npm run build-example && podman run --rm --name apidoc -p $PORT:80 -v ./tmp/apidoc-output:/usr/share/nginx/html:ro -d nginx; npm run serve:open",

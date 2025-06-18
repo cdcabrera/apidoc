@@ -4,7 +4,7 @@ FROM node:20-alpine
 LABEL org.label-schema.name="apidoc" \
     org.label-schema.description="apidoc container image" \
     org.label-schema.url="http://apidocjs.com/" \
-    org.label-schema.vcs-url="https://github.com/cdcabrera/apidoc" \
+    org.label-schema.vcs-url="https://github.com/cdcabrera/apidoc"
 
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
@@ -16,6 +16,6 @@ RUN mkdir -p /home/node/apidoc
 
 WORKDIR /home/node/apidoc
 
-RUN npm install --only=prod -g apidoc
+RUN npm install --omit=dev -g apidoc
 
 ENTRYPOINT ["apidoc"]
