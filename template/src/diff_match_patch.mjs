@@ -6,8 +6,8 @@ export default class DiffMatchPatch extends _DiffMatchPatch {
     this.testMode = testMode;
   }
 
-  diffMain(text1, text2, optChecklines, optDeadline) {
-    return super.diff_main(this._stripHtml(text1), this._stripHtml(text2), optChecklines, optDeadline);
+  diffMain(text1, text2, optCheckLines, optDeadline) {
+    return super.diff_main(this._stripHtml(text1), this._stripHtml(text2), optCheckLines, optDeadline);
   }
 
   diffLineMode(text1, text2) {

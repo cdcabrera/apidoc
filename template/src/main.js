@@ -103,7 +103,7 @@ function init() {
     $.each(groupEntries, (titleName, entries) => {
       const title = entries[0].title;
       if (title) {
-        // title.toLowerCase().replace(/[äöüß]/g, function ($0) { return umlauts[$0]; });
+        // title.toLowerCase().replace(/[]/g, function ($0) { return umlauts[$0]; });
         titles.push(title.toLowerCase() + '#~#' + titleName); // '#~#' keep reference to titleName after sorting
       }
     });
@@ -129,7 +129,7 @@ function init() {
   api = newList;
 
   //
-  // Group- and Versionlists
+  // Group- and version lists
   //
   let apiGroups = {};
   const apiGroupTitles = {};
@@ -157,11 +157,11 @@ function init() {
   apiVersions.reverse();
 
   //
-  // create Navigationlist
+  // create navigation list
   //
   const nav = [];
   apiGroups.forEach(group => {
-    // Mainmenu entry
+    // Main menu entry
     nav.push({
       group: group,
       isHeader: true,
@@ -244,7 +244,7 @@ function init() {
   }
 
   let foundLevel1;
-  // Mainmenu Header entry
+  // Main menu Header entry
   if (apiProject.header) {
     foundLevel1 = addNav(nav, apiProject.header.content, 0); // Add level 1 and 2 titles
     if (!foundLevel1) {
@@ -258,7 +258,7 @@ function init() {
     }
   }
 
-  // Mainmenu Footer entry
+  // Main menu Footer entry
   if (apiProject.footer) {
     const lastNavIndex = nav.length;
     foundLevel1 = addNav(nav, apiProject.footer.content, nav.length); // Add level 1 and 2 titles
@@ -273,7 +273,7 @@ function init() {
     }
   }
 
-  // render pagetitle
+  // render page title
   const title = apiProject.title ? apiProject.title : 'apiDoc: ' + apiProject.name + ' - ' + apiProject.version;
   $(document).attr('title', title);
 
@@ -646,7 +646,7 @@ function init() {
    */
   $('[data-action="filter-search"]').on(
     'keyup',
-    resetableTimeout(event => {
+    resetTableTimeout(event => {
       const query = event.currentTarget.value.toLowerCase();
 
       $('.sidenav a.nav-list-item').filter((index, el) => {
@@ -673,7 +673,7 @@ function init() {
    * @param {*} delay the time, in milliseconds that the timer should wait before the specified function or code is executed.
    * @returns Timeout function includes the callback
    */
-  function resetableTimeout(callback, delay) {
+  function resetTableTimeout(callback, delay) {
     let timer = null;
     return (...args) => {
       clearTimeout(timer);

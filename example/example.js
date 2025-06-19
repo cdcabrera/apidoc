@@ -61,7 +61,7 @@ function getUser () { }
  * @apiPermission none
  *
  * @apiDescription In this case "apiErrorStructure" is defined and used.
- * Define blocks with params that will be used in several functions, so you dont have to rewrite them.
+ * Define blocks with params that will be used in several functions, so you don't have to rewrite them.
  *
  * @apiBody {Number} age Age of the User
  * @apiBody {String} name=Caroline Name of the User

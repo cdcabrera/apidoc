@@ -7,10 +7,10 @@ import {logger, app} from './app.mjs';
 
 const testCases = [
   {
-    title: 'shoud detect basic parameters',
+    title: 'should detect basic parameters',
     testBlock: '@apiVersion 0.3.0',
     expected: [
-      { 
+      {
         source: '@apiVersion 0.3.0',
         name: 'apiversion',
         sourceName: 'apiVersion',
@@ -19,7 +19,7 @@ const testCases = [
     ]
   },
   {
-    title: 'shoud not detect @ in parameters values',
+    title: 'should not detect @ in parameters values',
     testBlock: `@apiParamExample {json} Some json code:
       {
         "user": "Sample User",

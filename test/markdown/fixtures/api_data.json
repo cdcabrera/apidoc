@@ -10,7 +10,7 @@
       {
         "name": "admin",
         "title": "Admin access rights needed.",
-        "description": "Custom Markdown Parser: Optionally you can write here further Informations about the permission.  An \"apiDefinePermission\"-block can have an \"apiVersion\", so you can attach the block to a specific version."
+        "description": "Custom Markdown Parser: Optionally you can write here further Information about the permission.  An \"apiDefinePermission\"-block can have an \"apiVersion\", so you can attach the block to a specific version."
       }
     ],
     "description": "Custom Markdown Parser: Be careful! This will remove all the data associated with that user!",
@@ -132,7 +132,7 @@
       {
         "name": "admin",
         "title": "Admin access rights needed.",
-        "description": "Custom Markdown Parser: Optionally you can write here further Informations about the permission.  An \"apiDefinePermission\"-block can have an \"apiVersion\", so you can attach the block to a specific version."
+        "description": "Custom Markdown Parser: Optionally you can write here further Information about the permission.  An \"apiDefinePermission\"-block can have an \"apiVersion\", so you can attach the block to a specific version."
       }
     ],
     "description": "Custom Markdown Parser: Compare version 0.3.0 with 0.2.0 and you will see the green markers with new items in version 0.3.0 and red markers with removed items since 0.2.0.",
@@ -447,7 +447,7 @@
         "name": "none"
       }
     ],
-    "description": "Custom Markdown Parser: In this case \"apiErrorStructure\" is defined and used. Define blocks with params that will be used in several functions, so you dont have to rewrite them.",
+    "description": "Custom Markdown Parser: In this case \"apiErrorStructure\" is defined and used. Define blocks with params that will be used in several functions, so you don't have to rewrite them.",
     "query": [
       {
         "group": "Query",
@@ -524,7 +524,7 @@
         "name": "none"
       }
     ],
-    "description": "Custom Markdown Parser: In this case \"apiErrorStructure\" is defined and used. Define blocks with params that will be used in several functions, so you dont have to rewrite them.",
+    "description": "Custom Markdown Parser: In this case \"apiErrorStructure\" is defined and used. Define blocks with params that will be used in several functions, so you don't have to rewrite them.",
     "parameter": {
       "fields": {
         "Parameter": [

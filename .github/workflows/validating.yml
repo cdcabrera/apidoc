@@ -29,10 +29,8 @@ jobs:
       - name: Install Node.js packages
         if: ${{ steps.modules-cache.outputs.cache-hit != 'true' }}
         run: npm ci
-      - name: Run linter
-        run: npm run eslint
-      - name: Run tests
-        run: npm run test
+      - name: Lint and test
+        run: npm run test:ci
       - name: Build example
         if: ${{ success() }}
         run: npm run build:example
