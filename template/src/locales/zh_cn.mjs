@@ -1,4 +1,9 @@
-export const zhCn = {
+/**
+ * Locale strings translated into Simplified Chinese.
+ *
+ * @type {object}
+ */
+const zhCn = {
   'Allowed values:': '允许值:',
   Body: '请求体',
   'Compare all with predecessor': '与所有之前的版本比较',
@@ -39,3 +44,5 @@ export const zhCn = {
   'Press Ctrl+C to copy': '按Ctrl+C复制',
   'copied!': '文本已复制!'
 };
+
+export { zhCn as default, zhCn };
