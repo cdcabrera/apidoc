@@ -33,6 +33,7 @@
     "serve": "export PROTOCOL=http; export HOST=127.0.0.1; export PORT=8080; npm run serve:stop; npm run build:example && podman run --rm --name apidoc -p $PORT:80 -v ./tmp/apidoc-output:/usr/share/nginx/html:ro -d nginx; npm run serve:open",
     "test": "mocha --colors --no-package --no-config 'test/**/*_test.*js'",
     "test:ci": "export CI=true; npm run test:lint && npm test;",
+    "test:fix": "eslint --fix",
     "test:lint": "npm run test:spell-support && npm run test:spell && eslint;",
     "test:spell-support": "cspell --fail-fast ./README.md ./CONTRIBUTING.md ./CONTRIBUTORS.md ./SECURITY.md --config ./cspell.config.json",
     "test:spell": "cspell --fail-fast './bin/apidoc' './example/**/*' './lib/**/*.*js' './template/index.html' './template/src/*' './test/**/*' --config ./cspell.config.json"

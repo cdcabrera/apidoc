@@ -31,6 +31,7 @@ export default [
     },
     rules: {
       'comma-dangle': 0,
+      'jsdoc/no-defaults': 0,
       'jsdoc/require-jsdoc': 2,
       'jsdoc/require-param': 2,
       'jsdoc/require-param-description': 0,

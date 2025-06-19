@@ -1,4 +1,9 @@
-export const fr = {
+/**
+ * Locale strings translated into French.
+ *
+ * @type {object}
+ */
+const fr = {
   'Allowed values:': 'Valeurs autorisées :',
   Body: 'Corps',
   'Compare all with predecessor': 'Tout comparer avec ...',
@@ -34,3 +39,5 @@ export const fr = {
   'Press Ctrl+C to copy': 'Appuyez sur Ctrl+C pour copier',
   'copied!': 'Copié!'
 };
+
+export { fr as default, fr };

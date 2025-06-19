@@ -1,4 +1,9 @@
-export const pl = {
+/**
+ * Locale strings translated into Polish.
+ *
+ * @type {object}
+ */
+const pl = {
   'Allowed values:': 'Dozwolone wartości:',
   'Compare all with predecessor': 'Porównaj z poprzednimi wersjami',
   'compare changes to:': 'porównaj zmiany do:',
@@ -25,3 +30,5 @@ export const pl = {
   'Press Ctrl+C to copy': 'Naciśnij Ctrl+C, aby skopiować',
   'copied!': 'Kopiowane!'
 };
+
+export { pl as default, pl };

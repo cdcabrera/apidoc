@@ -1,4 +1,9 @@
-export const nl = {
+/**
+ * Locale strings translated into Dutch.
+ *
+ * @type {object}
+ */
+const nl = {
   'Allowed values:': 'Toegestane waarden:',
   'Compare all with predecessor': 'Vergelijk alle met voorgaande versie',
   'compare changes to:': 'vergelijk veranderingen met:',
@@ -25,3 +30,5 @@ export const nl = {
   'Press Ctrl+C to copy': 'Druk op Ctrl+C om te kopiëren',
   'copied!': 'Gekopieerd!'
 };
+
+export { nl as default, nl };
