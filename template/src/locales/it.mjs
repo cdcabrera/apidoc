@@ -1,4 +1,9 @@
-export const it = {
+/**
+ * Locale strings translated into Italian.
+ *
+ * @type {object}
+ */
+const it = {
   'Allowed values:': 'Valori permessi:',
   'Compare all with predecessor': 'Confronta tutto con versioni precedenti',
   'compare changes to:': 'confronta modifiche con:',
@@ -25,3 +30,5 @@ export const it = {
   'Press Ctrl+C to copy': 'Premere CTRL+C per copiare',
   'copied!': 'Copiato!'
 };
+
+export { it as default, it };

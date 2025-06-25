@@ -1,4 +1,9 @@
-export const ro = {
+/**
+ * Locale strings translated into Romanian.
+ *
+ * @type {object}
+ */
+const ro = {
   'Allowed values:': 'Valori permise:',
   'Compare all with predecessor': 'Compară toate cu versiunea precedentă',
   'compare changes to:': 'compară cu versiunea:',
@@ -25,3 +30,5 @@ export const ro = {
   'Press Ctrl+C to copy': 'Apăsați Ctrl+C pentru a copia',
   'copied!': 'Copiat!'
 };
+
+export { ro as default, ro };

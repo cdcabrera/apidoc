@@ -1,4 +1,9 @@
-export const ru = {
+/**
+ * Locale strings translated into Russian.
+ *
+ * @type {object}
+ */
+const ru = {
   'Allowed values:': 'Допустимые значения:',
   'Compare all with predecessor': 'Сравнить с предыдущей версией',
   'compare changes to:': 'сравнить с:',
@@ -25,3 +30,5 @@ export const ru = {
   'Press Ctrl+C to copy': 'Нажмите Ctrl+C, чтобы скопировать',
   'copied!': 'Скопировано!'
 };
+
+export { ru as default, ru };

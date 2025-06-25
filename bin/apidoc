@@ -24,8 +24,8 @@ const apidoc = require(path.join(__dirname, '..', 'lib', 'index'));
 /**
  * Transform parameters to object
  *
- * @param {String|String[]} filters
- * @returns {Object}
+ * @param {string|string[]} filters
+ * @returns {object|void}
  */
 function transformToObject(filters) {
   if (!filters) {

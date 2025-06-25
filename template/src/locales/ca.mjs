@@ -1,4 +1,9 @@
-export const ca = {
+/**
+ * Locale strings translated into Catalan.
+ *
+ * @type {object}
+ */
+const ca = {
   'Allowed values:': 'Valors permesos:',
   'Compare all with predecessor': 'Comparar tot amb versió anterior',
   'compare changes to:': 'comparar canvis amb:',
@@ -25,3 +30,5 @@ export const ca = {
   'Press Ctrl+C to copy': 'Premeu Ctrl+C per copiar',
   'copied!': 'Copiat!'
 };
+
+export { ca as default, ca };

@@ -9,14 +9,18 @@
  * Licensed under the MIT license.
  */
 import $ from 'jquery';
-import UrlProcessor from './sampreq_url_processor';
+import { UrlProcessor } from './sampreq_url_processor';
 
-// Prism is the syntax highlighting lib
+/**
+ * Prism is the syntax highlighting lib
+ */
 import Prism from 'prismjs';
-// json language
 import 'prismjs/components/prism-json';
 
-export function initSampleRequest() {
+/**
+ * Initialize event listeners for sample request buttons, enabling the send and clear functionality.
+ */
+function initSampleRequest() {
   // Button send
   $('.sample-request-send').off('click');
   $('.sample-request-send').on('click', function (e) {
@@ -40,14 +44,28 @@ export function initSampleRequest() {
   });
 }
 
-// Converts path params in the {param} format to the accepted :param format, used before inserting the URL params.
+/**
+ * Convert path params in the {param} format to the accepted :param format,
+ *
+ * Converts path parameters in a URL from curly brace notation to colon notation.
+ * For example, replaces `{param}` with `:param`. Used before inserting the URL params.
+ *
+ * @param {string} url - URL containing path parameters in curly brace notation.
+ * @returns {string} URL with path parameters converted to colon notation.
+ */
 function convertPathParams(url) {
   return url.replace(/{(.+?)}/g, ':$1');
 }
+
 /**
- * Transforms https://example.org/:path/:id in https://example.org/some-path/42
+ * Process a base URL with path parameters and query parameters and return a hydrated URL.
+ *
+ * For example, https://example.org/:path/:id in https://example.org/some-path/42
  * Based on query parameters collected
- * @return string
+ *
+ * @param {object} root - Root DOM element to find the user-inputted URL.
+ * @param {object} queryParameters - Key-value pairs to use for hydrating the URL.
+ * @returns {string} - Hydrated URL with query parameters applied.
  */
 function getHydratedUrl(root, queryParameters) {
   // grab user-inputted URL
@@ -60,15 +78,20 @@ function getHydratedUrl(root, queryParameters) {
 }
 
 /**
- * Grab the values from the different inputs
+ * Collect and organize input values from a given DOM root element based on specified
+ * data-family attributes.
  *
- * The url in this object is already hydrated from query parameters
- * @return {
- *   "header": { "name": "some-name", "value": "some-value" },
- *   "query": { "name": "some-name", "value": "some-value" },
- *   "body": { "name": "some-name", "value": "some-value" },
- *   "url": "http://api.example.org/user/3",
- * }
+ * - Grabs values from different inputs
+ * - The url in this object is already hydrated from query parameters
+ *
+ * @param {object} root - DOM root element to collect values from. Expected to use jQuery for DOM
+ *     traversal and manipulation.
+ * @returns {{
+ *     header: { name: string, value: * },
+ *     query: { name: string, value: * },
+ *     body: { name: string, value: * },
+ *     url: string }} Object containing collected parameters organized by family types ('header',
+ *     'query', 'body'), including additional processing for checkboxes and optional fields.
  */
 function collectValues(root) {
   const parameters = {};
@@ -113,6 +136,17 @@ function collectValues(root) {
   return parameters;
 }
 
+/**
+ * Send a sample HTTP request based on provided parameters and display the response.
+ *
+ * @param {string} group - Group of the sample request, used to locate the corresponding
+ *     request element in the DOM.
+ * @param {string} name - Name of the sample request, used to locate the corresponding
+ *     request element in the DOM.
+ * @param {string} version - Version of the sample request, used to locate the
+ *     corresponding request element in the DOM.
+ * @param {string} method - HTTP method to use for the request (e.g., GET, POST, PUT, DELETE).
+ */
 function sendSampleRequest(group, name, version, method) {
   // root is the current sample request block, all is scoped within this block
   const root = $(`article[data-group="${group}"][data-name="${name}"][data-version="${version}"]`);
@@ -158,6 +192,14 @@ function sendSampleRequest(group, name, version, method) {
   root.find('.sample-request-response').fadeTo(200, 1);
   root.find('.sample-request-response-json').html('Loading...');
 
+  /**
+   * Parse and format JSON then update the corresponding UI element.
+   *
+   * @param {object} data - Data returned from AJAX success
+   * @param {string} status - Status of AJAX request
+   * @param {object} jqXHR - jQuery XMLHttpRequest object. Should contain the full server response,
+   *    including responseText and headers.
+   */
   function displaySuccess(data, status, jqXHR) {
     let jsonResponse;
     try {
@@ -170,6 +212,13 @@ function sendSampleRequest(group, name, version, method) {
     Prism.highlightAll();
   }
 
+  /**
+   * Display an error message with detailed information about the error response.
+   *
+   * @param {object} jqXHR - jQuery XMLHttpRequest object
+   * @param {string} textStatus - A string description of the error type.
+   * @param {string} error - Text description, or error message
+   */
   function displayError(jqXHR, textStatus, error) {
     let message = 'Error ' + jqXHR.status + ': ' + error;
     let jsonResponse;
@@ -195,6 +244,16 @@ function sendSampleRequest(group, name, version, method) {
   }
 }
 
+/**
+ * Clear the sample request section for a specific API endpoint.
+ *
+ * Includes resetting parameter inputs, hiding response elements, and restoring the default
+ * request URL.
+ *
+ * @param {string} group - Group name of the API endpoint.
+ * @param {string} name - Name of the API endpoint.
+ * @param {string} version - Version of the API endpoint.
+ */
 function clearSampleRequest(group, name, version) {
   const root = $('article[data-group="' + group + '"][data-name="' + name + '"][data-version="' + version + '"]');
 
@@ -214,3 +273,5 @@ function clearSampleRequest(group, name, version) {
   const $urlElement = root.find('.sample-request-url');
   $urlElement.val($urlElement.prop('defaultValue'));
 }
+
+export { initSampleRequest };
