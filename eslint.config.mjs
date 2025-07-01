@@ -2,6 +2,7 @@ import { join } from 'node:path';
 import globals from 'globals';
 import { includeIgnoreFile } from '@eslint/compat';
 import eslintPluginJs from '@eslint/js';
+import jsdocPlugin from 'eslint-plugin-jsdoc';
 import importPlugin from 'eslint-plugin-import';
 import nodePlugin from 'eslint-plugin-n';
 import prettierPlugin from 'eslint-plugin-prettier/recommended';
@@ -14,6 +15,7 @@ export default [
   {
     ignores: ['example/**/*', '**/vendor/**/*', 'test/**/*']
   },
+  jsdocPlugin.configs['flat/recommended'],
   nodePlugin.configs['flat/recommended'],
   eslintPluginJs.configs.recommended,
   importPlugin.flatConfigs.recommended,
@@ -29,6 +31,28 @@ export default [
     },
     rules: {
       'comma-dangle': 0,
+      'jsdoc/no-defaults': 0,
+      'jsdoc/require-jsdoc': 2,
+      'jsdoc/require-param': 2,
+      'jsdoc/require-param-description': 0,
+      'jsdoc/require-param-name': 2,
+      'jsdoc/require-param-type': 2,
+      'jsdoc/require-property': 2,
+      'jsdoc/require-property-description': 0,
+      'jsdoc/require-property-name': 2,
+      'jsdoc/require-property-type': 2,
+      'jsdoc/require-returns': 2,
+      'jsdoc/require-returns-description': 0,
+      'jsdoc/require-returns-type': 2,
+      'jsdoc/tag-lines': [
+        'warn',
+        'always',
+        {
+          count: 0,
+          applyToEndTag: false,
+          startLines: 1
+        }
+      ],
       'n/no-process-exit': 0,
       'n/no-unpublished-bin': 0,
       'n/no-unpublished-require': 0,

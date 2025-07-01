@@ -1,4 +1,9 @@
-export const es = {
+/**
+ * Locale strings translated into Spanish.
+ *
+ * @type {object}
+ */
+const es = {
   'Allowed values:': 'Valores permitidos:',
   'Compare all with predecessor': 'Comparar todo con versión anterior',
   'compare changes to:': 'comparar cambios con:',
@@ -25,3 +30,5 @@ export const es = {
   'Press Ctrl+C to copy': 'Presione Ctrl+C para copiar',
   'copied!': '¡Copiado!'
 };
+
+export { es as default, es };

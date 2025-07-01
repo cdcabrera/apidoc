@@ -1,4 +1,9 @@
-export const vi = {
+/**
+ * Locale strings translated into Vietnamese.
+ *
+ * @type {object}
+ */
+const vi = {
   'Allowed values:': 'Giá trị chấp nhận:',
   'Compare all with predecessor': 'So sánh với tất cả phiên bản trước',
   'compare changes to:': 'so sánh sự thay đổi với:',
@@ -25,3 +30,5 @@ export const vi = {
   'Press Ctrl+C to copy': 'Nhấn Ctrl+C để sao chép',
   'copied!': 'Sao chép!'
 };
+
+export { vi as default, vi };

@@ -1,4 +1,9 @@
-export const ptBr = {
+/**
+ * Locale strings translated into Brazilian Portuguese.
+ *
+ * @type {object}
+ */
+const ptBr = {
   'Allowed values:': 'Valores permitidos:',
   'Compare all with predecessor': 'Compare todos com antecessores',
   'compare changes to:': 'comparar alterações com:',
@@ -25,3 +30,5 @@ export const ptBr = {
   'Press Ctrl+C to copy': 'Pressione Ctrl+C para copiar',
   'copied!': 'Copiado!'
 };
+
+export { ptBr as default, ptBr };
