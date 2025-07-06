@@ -209,7 +209,7 @@ function init() {
    * Parses the given content for heading elements (h1 and h2), extracts their details,
    * and adds structured navigation objects to the provided nav array.
    *
-   * @param {Array} nav - Navigation array where parsed navigation objects will be added.
+   * @param {Array<object>} nav - Navigation array where parsed navigation objects will be added.
    * @param {string} content - HTML content string to parse for headings and metadata.
    * @param {number} index - Starting index in the nav array where new entries will be inserted.
    * @returns {boolean} Returns true if at least one level 1 heading (h1) was found and added; otherwise, false.
