@@ -1,6 +1,6 @@
 {
   "name": "@cdcabrera/apidoc",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "RESTful web API Documentation Generator",
   "author": "Peter Rottmann <rottmann@inveris.de>",
   "maintainers": [
