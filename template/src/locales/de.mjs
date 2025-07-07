@@ -1,4 +1,9 @@
-export const de = {
+/**
+ * Locale strings translated into German.
+ *
+ * @type {object}
+ */
+const de = {
   'Allowed values:': 'Erlaubte Werte:',
   'Compare all with predecessor': 'Vergleiche alle mit ihren Vorgängern',
   'compare changes to:': 'vergleiche Änderungen mit:',
@@ -25,3 +30,5 @@ export const de = {
   'Press Ctrl+C to copy': 'Drücken Sie Ctrl+C zum kopieren',
   'Copied!': 'Kopiert!'
 };
+
+export { de as default, de };

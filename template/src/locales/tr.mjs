@@ -1,4 +1,9 @@
-export const tr = {
+/**
+ * Locale strings translated into Turkish.
+ *
+ * @type {object}
+ */
+const tr = {
   'Allowed values:': 'İzin verilen değerler:',
   'Compare all with predecessor': 'Tümünü öncekiler ile karşılaştır',
   'compare changes to:': 'değişiklikleri karşılaştır:',
@@ -25,3 +30,5 @@ export const tr = {
   'Press Ctrl+C to copy': 'Kopyalamak için Ctrl+C tuşlarına basın',
   'copied!': 'Kopya -lanan!'
 };
+
+export { tr as default, tr };

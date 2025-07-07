@@ -43,6 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
   Prism.highlightAll();
 });
 
+/**
+ * Initialize the API documentation interface by compiling templates, organizing API data,
+ * and creating navigation elements.
+ *
+ * - Registers Handlebars helper functions.
+ * - Compiles Handlebars templates for rendering various sections of the documentation.
+ * - Groups and sorts API data by groups and versions.
+ * - Generates and orders the navigation menu based on API data and templates.
+ * - Handles additional configuration such as language settings and custom ordering.
+ */
 function init() {
   // bundler (webpack, esbuild, etc) injected data
   let api = API_DATA; // eslint-disable-line no-undef
@@ -76,10 +86,17 @@ function init() {
     setLanguage(apiProject.template.forceLanguage);
   }
 
-  //
-  // Data transform
-  //
-  // grouped by group
+  /**
+   * Data transform grouped by group.
+   *
+   * A map-like object that organizes API entries by their respective groups.
+   *
+   * This variable is created by grouping API entries from the `api` collection
+   * based on their `group` property. It helps in categorizing and accessing
+   * API entries according to their specified group.
+   *
+   * @type {object}
+   */
   const apiByGroup = groupBy(api, entry => {
     return entry.group;
   });
@@ -92,9 +109,7 @@ function init() {
     });
   });
 
-  //
   // sort api within a group by title ASC and custom order
-  //
   const newList = [];
   // const umlauts = { ä: 'ae', ü: 'ue', ö: 'oe', ß: 'ss' }; // TODO: remove in version 1.0
   $.each(apiByGroupAndName, (index, groupEntries) => {
@@ -156,9 +171,7 @@ function init() {
   apiVersions.sort(semver.compare);
   apiVersions.reverse();
 
-  //
   // create navigation list
-  //
   const nav = [];
   apiGroups.forEach(group => {
     // Main menu entry
@@ -199,10 +212,14 @@ function init() {
 
   /**
    * Add navigation items by analyzing the HTML content and searching for h1 and h2 tags
-   * @param nav Object the navigation array
-   * @param content string the compiled HTML content
-   * @param index where to insert items
-   * @return boolean true if any good-looking (i.e. with a group identifier) <h1> tag was found
+   *
+   * Parses the given content for heading elements (h1 and h2), extracts their details,
+   * and adds structured navigation objects to the provided nav array.
+   *
+   * @param {Array<object>} nav - Navigation array where parsed navigation objects will be added.
+   * @param {string} content - HTML content string to parse for headings and metadata.
+   * @param {number} index - Starting index in the nav array where new entries will be inserted.
+   * @returns {boolean} Returns true if at least one level 1 heading (h1) was found and added; otherwise, false.
    */
   function addNav(nav, content, index) {
     let foundLevel1 = false;
@@ -425,11 +442,15 @@ function init() {
     });
 
   /**
-   * Check if Parameter (sub) List has a type Field.
-   * Example: @apiSuccess          varname1 No type.
-   *          @apiSuccess {String} varname2 With type.
+   * Determine whether any field in the given fields object contains a property called 'type'.
    *
-   * @param {Object} fields
+   * Checks if Parameter (sub) List has a type Field.
+   * Example:
+   * - @apiSuccess varname1 No type.
+   * - @apiSuccess {string} varname2 With type.
+   *
+   * @param {object} fields - The object containing fields to be checked. Each field can contain nested items.
+   * @returns {boolean} Returns true if any field contains an item with a 'type' property, otherwise false.
    */
   function _hasTypeInFields(fields) {
     let result = false;
@@ -541,10 +562,16 @@ function init() {
     }
   }
 
-  //
-  // HTML-Template specific jQuery-Functions
-  //
-  // Change Main Version
+  /**
+   * HTML-Template specific jQuery-Functions.
+   *
+   * Sets the main version for the API documentation, updates the version display,
+   * hides irrelevant articles and navigation items, and shows only the elements
+   * corresponding to the selected version or the default version if no version is provided.
+   *
+   * @param {string} [selectedVersion] - Version string to set as the main version. If not
+   *     provided, the current version from the UI will be used.
+   */
   function setMainVersion(selectedVersion) {
     if (typeof selectedVersion === 'undefined') {
       selectedVersion = $('#version strong').html();
@@ -614,11 +641,13 @@ function init() {
     $('#compareAllWithPredecessor').trigger('click');
   }
 
-  // Quick jump on page load to hash position.
-  // Should happen after setting the main version
-  // and after triggering the click on the compare button,
-  // as these actions modify the content
-  // and would make it jump to the wrong position or not jump at all.
+  /**
+   * Quick jump on page load to hash position.
+   * Should happen after setting the main version
+   * and after triggering the click on the compare button,
+   * as these actions modify the content
+   * and would make it jump to the wrong position or not jump at all.
+   */
   if (window.location.hash) {
     const id = decodeURI(window.location.hash);
     if ($(id).length > 0) {
@@ -669,9 +698,9 @@ function init() {
    *
    * Behavior to prevent too many events from being triggered and getting stuck.
    *
-   * @param {*} callback function to call after delay expires.
-   * @param {*} delay the time, in milliseconds that the timer should wait before the specified function or code is executed.
-   * @returns Timeout function includes the callback
+   * @param {Function} callback - Function to be executed once the timeout is completed.
+   * @param {number} [delay] - Delay in milliseconds for the timeout. Defaults to zero.
+   * @returns {Function} A debounced function that resets the timeout every time it is invoked.
    */
   function resetTableTimeout(callback, delay) {
     let timer = null;
@@ -682,7 +711,9 @@ function init() {
   }
 
   /**
-   * Change version of an article to compare it to an other version.
+   * Change version of an article and compare it to another version.
+   *
+   * @param {Event} e - Event object
    */
   function changeVersionCompareTo(e) {
     e.preventDefault();
@@ -800,6 +831,11 @@ function init() {
 
   /**
    * Compare all currently selected Versions with their predecessor.
+   *
+   * Iterates over all visible articles with versions, compares their versions,
+   * and triggers a click event on the appropriate version element if conditions are met.
+   *
+   * @param {Event} e - Event object
    */
   function changeAllVersionCompareTo(e) {
     e.preventDefault();
@@ -823,7 +859,12 @@ function init() {
   }
 
   /**
-   * Add article settings.
+   * Add article settings to the provided fields.
+   *
+   * Modifies/mutates the `fields` object in place.
+   *
+   * @param {object} fields - Article fields object to which settings and properties will be added.
+   * @param {object} entry - Entry data containing various field groups such as header, parameter, error, success, and info.
    */
   function addArticleSettings(fields, entry) {
     // add unique id
@@ -856,7 +897,12 @@ function init() {
   }
 
   /**
-   * Render Article.
+   * Render an article based on the specified group, name, and version.
+   *
+   * @param {string} group - Group identifier for the article.
+   * @param {string} name - Name identifier for the article.
+   * @param {string} version - Version of the article to render.
+   * @returns {string} Rendered article string.
    */
   function renderArticle(group, name, version) {
     let entry = {};
@@ -877,6 +923,20 @@ function init() {
 
   /**
    * Render original Article and remove the current visible Article.
+   *
+   * @param group
+   * @param name
+   * @param version
+   */
+  /**
+   * Render the original Article and remove the current visible Article.
+   *
+   * Resets the content by replacing it with the newly rendered version and
+   * reassigning necessary event handlers.
+   *
+   * @param {string} group Group identifier for the article.
+   * @param {string} name Name identifier for the article.
+   * @param {string} version Version identifier for the article.
    */
   function resetArticle(group, name, version) {
     const $root = $(`article[data-group='${group}'][data-name='${name}']:visible`);
@@ -896,11 +956,12 @@ function init() {
   }
 
   /**
-   * Return ordered entries by custom order and append not defined entries to the end.
-   * @param  {String[]} elements
-   * @param  {String[]} order
-   * @param  {String}   splitBy
-   * @return {String[]} Custom ordered list.
+   * Return ordered entries by custom order and append not-defined entries to the end.
+   *
+   * @param {Array<string>} elements - Array of elements to be sorted.
+   * @param {Array<string>} order - Array representing the desired order of elements.
+   * @param {string} [splitBy] - Optional delimiter used to split elements
+   * @returns {Array<string>} Custom ordered list.
    */
   function sortByOrder(elements, order, splitBy) {
     const results = [];
@@ -931,10 +992,17 @@ function init() {
   }
 
   /**
-   * Return ordered groups by custom order and append not defined groups to the end.
-   * @param  {Object[]} elements (key: group name, value: group title)
-   * @param  {String[]} order
-   * @return {String[]} Custom ordered list.
+   * Return ordered groups by custom order and append not-defined groups to the end.
+   *
+   * Sorts the keys of a groups object in a specific order defined by the order array.
+   * Any keys not defined in the order array will appear at the end.
+   *
+   * @param {object} groups - Object where keys represent group names and values are
+   *     strings potentially containing underscores.
+   * @param {Array<string>} order - Array of strings defining the desired sort order.
+   *     Strings should match the values in the groups object after replacing
+   *     underscores with spaces.
+   * @returns {Array<string>} Custom ordered list.
    */
   function sortGroupsByOrder(groups, order) {
     const results = [];

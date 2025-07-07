@@ -1,4 +1,9 @@
-export const cs = {
+/**
+ * Locale strings translated into Czech.
+ *
+ * @type {object}
+ */
+const cs = {
   'Allowed values:': 'Povolené hodnoty:',
   'Compare all with predecessor': 'Porovnat vše s předchozími verzemi',
   'compare changes to:': 'porovnat změny s:',
@@ -25,3 +30,5 @@ export const cs = {
   'Press Ctrl+C to copy': 'Stisknutím kombinace kláves Ctrl+C zkopírujte',
   'copied!': 'Zkopírovaný!'
 };
+
+export { cs as default, cs };

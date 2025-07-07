@@ -66,13 +66,26 @@ const fieldsToJson = items => {
 };
 
 /**
- * Stringify an obj to JSON with spaces
+ * Stringify an object to JSON, with spaces.
+ *
+ * @param {object} obj - Object converted into JSON
+ * @returns {string} Formatted JSON string
  */
-export function beautify(obj) {
+function beautify(obj) {
   return JSON.stringify(obj, null, 4);
 }
 
-export function body2json(context) {
+/**
+ * Converts a given context of entries into a JSON object.
+ *
+ * @param {Array<{
+ *     type: (string|boolean|number|Date|*),
+ *     defaultValue: *}>} context - An array of entries where each entry details a
+ *     field, its type, and optionally its default value.
+ * @returns {object} JSON of the fields defined in context. Each field
+ *     is assigned a value based on its type and defaultValue.
+ */
+function body2json(context) {
   // build an array of fields with their type
   const fields = [];
   context.forEach(entry => {
@@ -96,3 +109,5 @@ export function body2json(context) {
   });
   return fieldsToJson(fields);
 }
+
+export { beautify, body2json };
