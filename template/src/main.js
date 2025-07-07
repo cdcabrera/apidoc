@@ -44,7 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
+ * Initialize the API documentation interface by compiling templates, organizing API data,
+ * and creating navigation elements.
  *
+ * - Registers Handlebars helper functions.
+ * - Compiles Handlebars templates for rendering various sections of the documentation.
+ * - Groups and sorts API data by groups and versions.
+ * - Generates and orders the navigation menu based on API data and templates.
+ * - Handles additional configuration such as language settings and custom ordering.
  */
 function init() {
   // bundler (webpack, esbuild, etc) injected data
