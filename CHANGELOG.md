@@ -1,5 +1,26 @@
 # apiDoc Changelog
 
+## [3.0.0](https://github.com/cdcabrera/apidoc/compare/93cc50a846a488996d07739a2c61e8ddea242e3b...b62d125370870457a32af54edd4b62ff9eb3a3d6) (2025-07-07)
+⚠ BREAKING CHANGES
+
+### Code Refactoring
+* **writer** base64 header images ([#32](https://github.com/cdcabrera/apidoc/pull/32)) ([29c9575](https://github.com/cdcabrera/apidoc/commit/29c95758aff7779bddd30bbc2080f0b4ca4696b1))
+* ⚠ **template** migrate webpack to esbuild ([#32](https://github.com/cdcabrera/apidoc/pull/32)) ([3927f5c](https://github.com/cdcabrera/apidoc/commit/3927f5c6a7a56014f64a6a9e51c695fedbaea93f))
+
+### Builds
+* **deps-dev** bump the dev group with 9 updates ([#42](https://github.com/cdcabrera/apidoc/pull/42)) ([b62d125](https://github.com/cdcabrera/apidoc/commit/b62d125370870457a32af54edd4b62ff9eb3a3d6))
+* **deps-dev** bump the dev group with 5 updates ([#40](https://github.com/cdcabrera/apidoc/pull/40)) ([71b9c6b](https://github.com/cdcabrera/apidoc/commit/71b9c6b27ea686bd7addfee03011cb5d802f3efa))
+*  add spell check ([#39](https://github.com/cdcabrera/apidoc/pull/39)) ([2c6c5a2](https://github.com/cdcabrera/apidoc/commit/2c6c5a2c5e7d7c407f4acf890b2fe49d5c1da40f))
+*  adjust validating checks, npm scripts ([#38](https://github.com/cdcabrera/apidoc/pull/38)) ([e941572](https://github.com/cdcabrera/apidoc/commit/e9415722ad2d2035379d847458a31b48fecdc0c8))
+* **deps-dev** @types/node from 22.15.31 to 24.0.3 ([#36](https://github.com/cdcabrera/apidoc/pull/36)) ([9d772a0](https://github.com/cdcabrera/apidoc/commit/9d772a098c8487470983152563a3555f3a74d3dc))
+* **deps** bump group with 2 updates ([#35](https://github.com/cdcabrera/apidoc/pull/35)) ([09a06ae](https://github.com/cdcabrera/apidoc/commit/09a06ae2c3c9a28ff37f2297aa16cd9a85d24a0f))
+* **deps** expose-loader from 4.1.0 to 5.0.1 ([#34](https://github.com/cdcabrera/apidoc/pull/34)) ([7ba5fb6](https://github.com/cdcabrera/apidoc/commit/7ba5fb60cad61072fb07feed0b094b1d837975f2))
+* **deps-dev** bump mocha from 11.5.0 to 11.6.0 ([#33](https://github.com/cdcabrera/apidoc/pull/33)) ([27a5ed3](https://github.com/cdcabrera/apidoc/commit/27a5ed306b158ba20d064902714509a2e6d1554c))
+* **deps-dev** lint with prettier ([#30](https://github.com/cdcabrera/apidoc/pull/30)) ([6423dd5](https://github.com/cdcabrera/apidoc/commit/6423dd550991830b5f4ef0c6a7f6fe4cb7b68e35))
+
+### Bug Fixes
+* **containerfile** errant escape, npm param ([#37](https://github.com/cdcabrera/apidoc/pull/37)) ([150a272](https://github.com/cdcabrera/apidoc/commit/150a272a59c284f616716eacfe5bb97c5fb6e13d))
+
 ## [2.0.2](https://github.com/cdcabrera/apidoc/compare/feb97a7315473ac52283916aa7369bcff8792167...26a8f4057b8dcf2f9ad19a99b8aa251c2d847817) (2025-06-07)
 
 
