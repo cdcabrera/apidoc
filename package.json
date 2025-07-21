@@ -59,7 +59,7 @@
   "dependencies": {
     "commander": "^14.0.0",
     "diff-match-patch": "^1.0.5",
-    "esbuild": "^0.25.6",
+    "esbuild": "^0.25.8",
     "fs-extra": "^11.3.0",
     "glob": "^11.0.3",
     "handlebars": "^4.7.8",
