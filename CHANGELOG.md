@@ -1,5 +1,19 @@
 # apiDoc Changelog
 
+## [3.0.1](https://github.com/cdcabrera/apidoc/compare/51eed09e9fd70744e87da30dc0880dc3cdc75865...896500593e6da6a088fa05cb63d069b80e474f43) (2025-07-25)
+
+
+### Documentation
+*  lib, template annotations ([#41](https://github.com/cdcabrera/apidoc/pull/41)) ([390dc3a](https://github.com/cdcabrera/apidoc/commit/390dc3aa2e6cc0e77b0e43e7579a5ff4dce6a1f6))
+
+### Builds
+* **deps** lock reset ([#49](https://github.com/cdcabrera/apidoc/pull/49)) ([8965005](https://github.com/cdcabrera/apidoc/commit/896500593e6da6a088fa05cb63d069b80e474f43))
+* **deps-dev** bump the dev group with 5 updates ([#47](https://github.com/cdcabrera/apidoc/pull/47)) ([8470d4a](https://github.com/cdcabrera/apidoc/commit/8470d4a6957302ae9a37a7020865bd18769a753e))
+* **deps** bump esbuild from 0.25.6 to 0.25.8 ([#48](https://github.com/cdcabrera/apidoc/pull/48)) ([37f3eba](https://github.com/cdcabrera/apidoc/commit/37f3eba1524de4e837da9555ffb790e78a720dd4))
+* **deps-dev** bump the dev group with 4 updates ([#46](https://github.com/cdcabrera/apidoc/pull/46)) ([db49408](https://github.com/cdcabrera/apidoc/commit/db4940870a69261eb7f8ffb6504862a9ea556506))
+* **deps-dev** bump dev group with 9 updates ([#44](https://github.com/cdcabrera/apidoc/pull/44)) ([2482be3](https://github.com/cdcabrera/apidoc/commit/2482be3b3e99e6356230562428571e7331fc7eb3))
+* **deps** bump esbuild from 0.25.5 to 0.25.6 ([#45](https://github.com/cdcabrera/apidoc/pull/45)) ([92d8fd2](https://github.com/cdcabrera/apidoc/commit/92d8fd204fbd15fa69b7113907fe2db7229a21a6))
+
 ## [3.0.0](https://github.com/cdcabrera/apidoc/compare/93cc50a846a488996d07739a2c61e8ddea242e3b...b62d125370870457a32af54edd4b62ff9eb3a3d6) (2025-07-07)
 ⚠ BREAKING CHANGES
 
