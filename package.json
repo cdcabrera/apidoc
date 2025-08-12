@@ -60,7 +60,7 @@
     "commander": "^14.0.0",
     "diff-match-patch": "^1.0.5",
     "esbuild": "^0.25.8",
-    "fs-extra": "^11.3.0",
+    "fs-extra": "^11.3.1",
     "glob": "^11.0.3",
     "handlebars": "^4.7.8",
     "iconv-lite": "^0.6.3",
