@@ -1,5 +1,15 @@
 # apiDoc Changelog
 
+## [3.0.2](https://github.com/cdcabrera/apidoc/compare/3a6d79ae29670c438cd542523fce5c4be883ac0a...5351ab9a9c5472390c01fd2d33e339372f469d40) (2025-08-13)
+
+
+### Builds
+* **deps-dev** bump the dev group with 5 updates ([#56](https://github.com/cdcabrera/apidoc/pull/56)) ([5351ab9](https://github.com/cdcabrera/apidoc/commit/5351ab9a9c5472390c01fd2d33e339372f469d40))
+* **deps** bump fs-extra from 11.3.0 to 11.3.1 ([#54](https://github.com/cdcabrera/apidoc/pull/54)) ([e80ced5](https://github.com/cdcabrera/apidoc/commit/e80ced51701de3083081adef6e2a157db978fc58))
+* **deps-dev** bump the dev group with 2 updates ([#53](https://github.com/cdcabrera/apidoc/pull/53)) ([0b0d509](https://github.com/cdcabrera/apidoc/commit/0b0d50960b55ab71fde5fc0d5e7583c32d16d091))
+* **deps-dev** eslint-plugin-jsdoc from 51.4.1 to 52.0.0 ([#51](https://github.com/cdcabrera/apidoc/pull/51)) ([7904905](https://github.com/cdcabrera/apidoc/commit/79049056c79ed38d0d8df9364445ddad655ecc2b))
+* **deps-dev** bump the dev group with 3 updates ([#52](https://github.com/cdcabrera/apidoc/pull/52)) ([e251d40](https://github.com/cdcabrera/apidoc/commit/e251d409175236b79e9880403fd1da01b9ce49ca))
+
 ## [3.0.1](https://github.com/cdcabrera/apidoc/compare/51eed09e9fd70744e87da30dc0880dc3cdc75865...896500593e6da6a088fa05cb63d069b80e474f43) (2025-07-25)
 
 
