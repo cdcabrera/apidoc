@@ -12,18 +12,17 @@
 const fieldsToJson = items => {
   let obj = {};
 
-  const _get = (obj, path) => {
-    return path.split('.').reduce((o, key) => {
-      if (o) {
-        if (o[key]) {
-          return o[key];
-        } else if (Array.isArray(o) && o[0] && o[0][key]) {
-          return o[0][key];
-        }
+  const _get = (obj, path) => path.split('.').reduce((o, key) => {
+    if (o) {
+      if (o[key]) {
+        return o[key];
+      } else if (Array.isArray(o) && o[0] && o[0][key]) {
+        return o[0][key];
       }
-      return null;
-    }, obj);
-  };
+    }
+
+    return null;
+  }, obj);
 
   const _set = (parentPtr, key, value) => {
     if (parentPtr) {
@@ -46,6 +45,7 @@ const fieldsToJson = items => {
     const parentPtr = parentNode ? _get(obj, parentNode.path) : undefined;
     const key = parentPtr ? field.substring(parentNode.path.length + 1) : field;
     const isArray = type.indexOf('[]') !== -1;
+
     // Object / array of Object
     if (type.indexOf('Object') !== -1) {
       _set(parentPtr, key, isArray ? [] : {});
@@ -58,6 +58,7 @@ const fieldsToJson = items => {
   // if result contains only one property that is optional, and this is an
   // array of objects, remove the key
   const objKeys = Object.keys(obj);
+
   if (objKeys.length === 1 && items[0][0].optional) {
     obj = obj[objKeys[0]];
   }
@@ -88,8 +89,10 @@ function beautify(obj) {
 function body2json(context) {
   // build an array of fields with their type
   const fields = [];
+
   context.forEach(entry => {
     let val;
+
     switch (entry.type.toLowerCase()) {
       case 'string':
         val = entry.defaultValue || '';
@@ -107,6 +110,7 @@ function body2json(context) {
     }
     fields.push([entry, val]);
   });
+
   return fieldsToJson(fields);
 }
 

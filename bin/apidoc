@@ -37,12 +37,15 @@ function transformToObject(filters) {
   }
 
   const result = {};
+
   filters.forEach(function (filter) {
     const splits = filter.split('=');
+
     if (splits.length === 2) {
       result[splits[0]] = path.resolve(splits[1], '');
     }
   });
+
   return result;
 }
 
@@ -51,6 +54,7 @@ const program = new Command();
 
 // set the version from package.json so it is available with --version
 const pkgJson = require(path.join('..', 'package.json'));
+
 program.version(pkgJson.version);
 
 program
@@ -165,6 +169,7 @@ if (options.verbose && options.logFormat === 'simple') {
   \\__,_| .__/|_|\\__,_|\\___/ \\___|
        |_|                v${pkgJson.version}
    `;
+
   console.info(asciiArt);
 }
 
@@ -181,6 +186,7 @@ if (argv.watch) {
       console.info('Changes detected, rebuilding...');
       apidoc.createDoc(options);
       const d = new Date();
+
       console.info(`Build finished at ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`);
     });
 }
