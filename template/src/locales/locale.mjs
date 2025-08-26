@@ -122,9 +122,11 @@ let locale = locales[lang] ? locales[lang] : locales.en;
  */
 function __(text) {
   const index = locale[text];
+
   if (index === undefined) {
     return text;
   }
+
   return index;
 }
 

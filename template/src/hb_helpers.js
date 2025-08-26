@@ -13,8 +13,8 @@
  * Helper functions for HandleBars
  */
 import Handlebars from 'handlebars';
-import { __ } from './locales/locale';
 import $ from 'jquery';
+import { __ } from './locales/locale';
 import { body2json } from './jsonifier';
 import { DiffMatchPatch } from './diff_match_patch';
 
@@ -35,8 +35,10 @@ function register() {
     }
     text = text.replace(/((\[(.*?)\])?\(#)((.+?):(.+?))(\))/gm, function (match, p1, p2, p3, p4, p5, p6) {
       const link = p3 || p5 + '/' + p6;
+
       return '<a href="#api-' + p5 + '-' + p6 + '">' + link + '</a>';
     });
+
     return text;
   });
 
@@ -62,13 +64,16 @@ function register() {
    * start/stop timer for simple performance check.
    */
   let timer;
+
   Handlebars.registerHelper('startTimer', function () {
     timer = new Date();
+
     return '';
   });
 
   Handlebars.registerHelper('stopTimer', function () {
     console.log(new Date() - timer);
+
     return '';
   });
 
@@ -88,6 +93,7 @@ function register() {
    */
   Handlebars.registerHelper('cl', function (obj) {
     console.log(obj);
+
     return '';
   });
 
@@ -116,11 +122,13 @@ function register() {
     if (arguments.length > 0) {
       const type = typeof arguments[1];
       let arg = null;
+
       if (type === 'string' || type === 'number' || type === 'boolean') arg = arguments[1];
       Handlebars.registerHelper(name, function () {
         return arg;
       });
     }
+
     return '';
   });
 
@@ -176,6 +184,7 @@ function register() {
    *
    */
   const templateCache = {};
+
   Handlebars.registerHelper('subTemplate', function (name, sourceContext) {
     if (!templateCache[name]) {
       templateCache[name] = Handlebars.compile(document.getElementById('template-' + name).innerHTML);
@@ -183,6 +192,7 @@ function register() {
 
     const template = templateCache[name];
     const templateContext = $.extend({}, this, sourceContext.hash);
+
     return new Handlebars.SafeString(template(templateContext));
   });
 
@@ -199,11 +209,14 @@ function register() {
   Handlebars.registerHelper('dot2bracket', function (entry) {
     const { parentNode, field, isArray } = entry;
     let ret = '';
+
     if (parentNode) {
       let current = entry;
+
       // loop on parents to build full object path
       do {
         const p = current.parentNode;
+
         if (p.isArray) {
           ret = `[]${ret}`;
         }
@@ -221,6 +234,7 @@ function register() {
         ret += '[]';
       }
     }
+
     return ret;
   });
 
@@ -232,6 +246,7 @@ function register() {
    */
   Handlebars.registerHelper('nestObject', function (entry) {
     const { parentNode, field } = entry;
+
     return parentNode
       ? '&nbsp;&nbsp;'.repeat(parentNode.path.split('.').length) + field.substring(parentNode.path.length + 1)
       : field;
@@ -248,9 +263,7 @@ function register() {
    * @private
    */
   function _handlebarsNewlineToBreak(text) {
-    return ('' + text).replace(/(?:^|<\/pre>)[^]*?(?:<pre>|$)/g, m => {
-      return m.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + '<br>' + '$2');
-    });
+    return String(text).replace(/(?:^|<\/pre>)[^]*?(?:<pre>|$)/g, m => m.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + '<br>' + '$2'));
   }
 
   /**
@@ -259,22 +272,27 @@ function register() {
   Handlebars.registerHelper('each_compare_list_field', function (source, compare, options) {
     const fieldName = options.hash.field;
     const newSource = [];
+
     if (source) {
       source.forEach(function (entry) {
         const values = entry;
+
         values.key = entry[fieldName];
         newSource.push(values);
       });
     }
 
     const newCompare = [];
+
     if (compare) {
       compare.forEach(function (entry) {
         const values = entry;
+
         values.key = entry[fieldName];
         newCompare.push(values);
       });
     }
+
     return _handlebarsEachCompared('key', newSource, newCompare, options);
   });
 
@@ -283,10 +301,13 @@ function register() {
    */
   Handlebars.registerHelper('each_compare_keys', function (source, compare, options) {
     const newSource = [];
+
     if (source) {
       const sourceFields = Object.keys(source);
+
       sourceFields.forEach(function (name) {
         const values = {};
+
         values.value = source[name];
         values.key = name;
         newSource.push(values);
@@ -294,15 +315,19 @@ function register() {
     }
 
     const newCompare = [];
+
     if (compare) {
       const compareFields = Object.keys(compare);
+
       compareFields.forEach(function (name) {
         const values = {};
+
         values.value = compare[name];
         values.key = name;
         newCompare.push(values);
       });
     }
+
     return _handlebarsEachCompared('key', newSource, newCompare, options);
   });
 
@@ -324,6 +349,7 @@ function register() {
         return JSON.stringify(JSON.parse(source.trim()), null, '    ');
       } catch (e) {}
     }
+
     return source;
   });
 
@@ -342,11 +368,14 @@ function register() {
       }
 
       const diffMatchPatch = new DiffMatchPatch();
+
       if (options === 'code') {
         const d = diffMatchPatch.diffLineMode(compare, source);
+
         ds = diffMatchPatch.diffPrettyCode(d);
       } else {
         const d = diffMatchPatch.diffMain(compare, source);
+
         diffMatchPatch.diffCleanupSemantic(d);
         ds = diffMatchPatch.diffPrettyHtml(d);
         ds = ds.replace(/&para;/gm, '');
@@ -375,9 +404,11 @@ function register() {
   function _handlebarsEachCompared(fieldname, source, compare, options) {
     const dataList = [];
     let index = 0;
+
     if (source) {
       source.forEach(function (sourceEntry) {
         let found = false;
+
         if (compare) {
           compare.forEach(function (compareEntry) {
             if (sourceEntry[fieldname] === compareEntry[fieldname]) {
@@ -387,6 +418,7 @@ function register() {
                 compare: compareEntry,
                 index: index
               };
+
               dataList.push(data);
               found = true;
               index++;
@@ -399,6 +431,7 @@ function register() {
             source: sourceEntry,
             index: index
           };
+
           dataList.push(data);
           index++;
         }
@@ -408,6 +441,7 @@ function register() {
     if (compare) {
       compare.forEach(function (compareEntry) {
         let found = false;
+
         if (source) {
           source.forEach(function (sourceEntry) {
             if (sourceEntry[fieldname] === compareEntry[fieldname]) {
@@ -421,6 +455,7 @@ function register() {
             compare: compareEntry,
             index: index
           };
+
           dataList.push(data);
           index++;
         }
@@ -429,12 +464,14 @@ function register() {
 
     let ret = '';
     const length = dataList.length;
+
     for (const index in dataList) {
       if (parseInt(index, 10) === length - 1) {
         dataList[index]._last = true;
       }
       ret = ret + options.fn(dataList[index]);
     }
+
     return ret;
   }
 }
