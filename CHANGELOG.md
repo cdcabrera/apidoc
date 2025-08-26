@@ -1,5 +1,14 @@
 # apiDoc Changelog
 
+## [3.0.3](https://github.com/cdcabrera/apidoc/compare/112fd5977fe4cc556c6e80c8d4d34a3bf911a1b1...52249829369ef95fe65d92847ea4040be8f83b3c) (2025-08-26)
+
+
+### Builds
+* **deps-dev** bump dev group with 2 updates ([#61](https://github.com/cdcabrera/apidoc/pull/61)) ([5224982](https://github.com/cdcabrera/apidoc/commit/52249829369ef95fe65d92847ea4040be8f83b3c))
+* **deps-dev** bump eslint-plugin-jsdoc from 52.0.2 to 54.1.0 ([#60](https://github.com/cdcabrera/apidoc/pull/60)) ([12515c9](https://github.com/cdcabrera/apidoc/commit/12515c965804bb336927b3b8433dcecdb36df37f))
+* **deps** bump esbuild from 0.25.8 to 0.25.9 ([#59](https://github.com/cdcabrera/apidoc/pull/59)) ([6b7ff11](https://github.com/cdcabrera/apidoc/commit/6b7ff1116b70b296f0d8c91750c4130a66691764))
+* **deps-dev** bump the dev group with 2 updates ([#58](https://github.com/cdcabrera/apidoc/pull/58)) ([c870a08](https://github.com/cdcabrera/apidoc/commit/c870a084c6c45b2d73d5fbc0a2243d51eb7cf071))
+
 ## [3.0.2](https://github.com/cdcabrera/apidoc/compare/3a6d79ae29670c438cd542523fce5c4be883ac0a...5351ab9a9c5472390c01fd2d33e339372f469d40) (2025-08-13)
 
 
