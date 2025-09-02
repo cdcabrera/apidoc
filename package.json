@@ -63,7 +63,7 @@
     "fs-extra": "^11.3.1",
     "glob": "^11.0.3",
     "handlebars": "^4.7.8",
-    "iconv-lite": "^0.6.3",
+    "iconv-lite": "^0.7.0",
     "jquery": "^3.6.0",
     "klaw-sync": "^7.0.0",
     "lodash": "^4.17.21",
