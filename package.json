@@ -57,10 +57,10 @@
     "win32"
   ],
   "dependencies": {
-    "commander": "^14.0.0",
+    "commander": "^14.0.1",
     "diff-match-patch": "^1.0.5",
-    "esbuild": "^0.25.9",
-    "fs-extra": "^11.3.1",
+    "esbuild": "^0.25.10",
+    "fs-extra": "^11.3.2",
     "glob": "^11.0.3",
     "handlebars": "^4.7.8",
     "iconv-lite": "^0.7.0",
@@ -70,8 +70,8 @@
     "markdown-it": "^14.1.0",
     "nodemon": "^3.1.10",
     "prismjs": "^1.30.0",
-    "semver": "^7.7.2",
-    "winston": "^3.17.0"
+    "semver": "^7.7.3",
+    "winston": "^3.18.3"
   },
   "devDependencies": {
     "@eslint/compat": "^1.4.0",
