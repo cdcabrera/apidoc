@@ -1,5 +1,23 @@
 # apiDoc Changelog
 
+## [3.0.4](https://github.com/cdcabrera/apidoc/compare/a2e108e0f0653fa6b794fb8a627629db11e2f759...ca8d61fc03c26d7c16a9ec8812b0cd783200a1f1) (2025-11-10)
+
+
+### Builds
+* **deps** bump prod group with 2 updates ([#90](https://github.com/cdcabrera/apidoc/pull/90)) ([ca8d61f](https://github.com/cdcabrera/apidoc/commit/ca8d61fc03c26d7c16a9ec8812b0cd783200a1f1))
+* **deps-dev** bump the dev group with 5 updates ([#88](https://github.com/cdcabrera/apidoc/pull/88)) ([3ed6569](https://github.com/cdcabrera/apidoc/commit/3ed656915f09482caf570be9422c47be075be53e))
+* **deps-dev** bump the dev group with 6 updates ([#77](https://github.com/cdcabrera/apidoc/pull/77)) ([e10c6f2](https://github.com/cdcabrera/apidoc/commit/e10c6f28dc30f0bc7e1cff45e200e7c3d9fde3d8))
+*  dependabot, cooldown for actions ([#84](https://github.com/cdcabrera/apidoc/pull/84)) ([eb713ec](https://github.com/cdcabrera/apidoc/commit/eb713ec0cb72368c9f0ce49721406413f2f360b0))
+*  add nodejs 24 check ([#83](https://github.com/cdcabrera/apidoc/pull/83)) ([7882446](https://github.com/cdcabrera/apidoc/commit/78824462f709f65a6619af6aefc9612f6d286559))
+*  dependabot, package cooldown ([#80](https://github.com/cdcabrera/apidoc/pull/80)) ([2a2deb2](https://github.com/cdcabrera/apidoc/commit/2a2deb246de241881fb95b362b739fad816b7aff))
+* **deps** bump actions/setup-node from 4 to 5 ([#76](https://github.com/cdcabrera/apidoc/pull/76)) ([c609163](https://github.com/cdcabrera/apidoc/commit/c609163200f3ba522ffb2a104d5a105760fe94de))
+* **deps-dev** eslint-plugin-jsdoc from 54.2.1 to 57.0.8 ([#70](https://github.com/cdcabrera/apidoc/pull/70)) ([82681b0](https://github.com/cdcabrera/apidoc/commit/82681b00dc4a233d5af508185c39613bf55040e2))
+* **deps-dev** bump the dev group with 5 updates ([#71](https://github.com/cdcabrera/apidoc/pull/71)) ([c23611c](https://github.com/cdcabrera/apidoc/commit/c23611c66daa14f68e3e00553211839ce12b5684))
+* **deps** bump iconv-lite from 0.6.3 to 0.7.0 ([#62](https://github.com/cdcabrera/apidoc/pull/62)) ([4a34bc9](https://github.com/cdcabrera/apidoc/commit/4a34bc934fb6551ba72753e1c4bfb81874f65854))
+* **deps-dev** bump the dev group with 3 updates ([#68](https://github.com/cdcabrera/apidoc/pull/68)) ([085cf3f](https://github.com/cdcabrera/apidoc/commit/085cf3fd10e225ebb04d94fe5717a050bf91ce94))
+* **deps** bump actions/checkout from 4 to 5 ([#67](https://github.com/cdcabrera/apidoc/pull/67)) ([43740fe](https://github.com/cdcabrera/apidoc/commit/43740fe769d9682b5efa3fc8350be7c94629fb34))
+* **deps-dev** bump cspell from 9.2.0 to 9.2.1 ([#65](https://github.com/cdcabrera/apidoc/pull/65)) ([37429ad](https://github.com/cdcabrera/apidoc/commit/37429addbb69a34bfac8d17f866042af691a87ba))
+
 ## [3.0.3](https://github.com/cdcabrera/apidoc/compare/112fd5977fe4cc556c6e80c8d4d34a3bf911a1b1...52249829369ef95fe65d92847ea4040be8f83b3c) (2025-08-26)
 
 
