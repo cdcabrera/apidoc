@@ -20,6 +20,7 @@ export default [
       'consistent-return': 0,
       'func-names': 0,
       'no-param-reassign': 0,
+      'no-plusplus': 0,
       'import/no-dynamic-require': 0,
       'import/no-unresolved': 0,
       'n/no-process-exit': 0,

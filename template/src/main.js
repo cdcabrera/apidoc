@@ -301,7 +301,7 @@ function init() {
   }
 
   // render page title
-  const title = apiProject.title ? apiProject.title : 'apiDoc: ' + apiProject.name + ' - ' + apiProject.version;
+  const title = apiProject.title || 'apiDoc: ' + apiProject.name + ' - ' + apiProject.version;
 
   $(document).attr('title', title);
 
