@@ -6,6 +6,11 @@ import _DiffMatchPatch from 'diff-match-patch';
  * @class
  */
 class DiffMatchPatch extends _DiffMatchPatch {
+  /**
+   * Initialize class
+   *
+   * @param {*} testMode
+   */
   constructor(testMode) {
     super();
     this.testMode = testMode;
@@ -46,7 +51,9 @@ class DiffMatchPatch extends _DiffMatchPatch {
     const lineText2 = a.chars2;
     const lineArray = a.lineArray;
     const diffs = super.diff_main(lineText1, lineText2, false);
+
     this.diff_charsToLines_(diffs, lineArray);
+
     return diffs;
   }
 
@@ -65,6 +72,7 @@ class DiffMatchPatch extends _DiffMatchPatch {
     const patternLt = /</g;
     const patternGt = />/g;
     const patternPara = /\n/g;
+
     for (let x = 0; x < diffs.length; x++) {
       const op = diffs[x][0]; // Operation (insert, delete, equal)
       const data = diffs[x][1]; // Text of change.
@@ -73,6 +81,7 @@ class DiffMatchPatch extends _DiffMatchPatch {
         .replace(patternLt, '&lt;')
         .replace(patternGt, '&gt;')
         .replace(patternPara, '&para;<br>');
+
       switch (op) {
         case _DiffMatchPatch.DIFF_INSERT:
           html[x] = '<ins>' + text + '</ins>';
@@ -85,6 +94,7 @@ class DiffMatchPatch extends _DiffMatchPatch {
           break;
       }
     }
+
     return html.join('');
   }
 
@@ -108,10 +118,12 @@ class DiffMatchPatch extends _DiffMatchPatch {
   diffPrettyCode(diffs) {
     const html = [];
     const patternPara = /\n/g;
+
     for (let x = 0; x < diffs.length; x++) {
       const op = diffs[x][0]; // Operation (insert, delete, equal)
       const text = diffs[x][1]; // Text of change.
       const lb = text.match(patternPara) ? '' : '\n';
+
       switch (op) {
         case _DiffMatchPatch.DIFF_INSERT:
           html[x] = text.replace(/^(.)/gm, '+ $1') + lb;
@@ -124,6 +136,7 @@ class DiffMatchPatch extends _DiffMatchPatch {
           break;
       }
     }
+
     return html.join('');
   }
 
@@ -152,7 +165,9 @@ class DiffMatchPatch extends _DiffMatchPatch {
       return html;
     }
     const div = document.createElement('div');
+
     div.innerHTML = html;
+
     return div.textContent || div.innerText || '';
   }
 }

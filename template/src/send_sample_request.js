@@ -9,13 +9,9 @@
  * Licensed under the MIT license.
  */
 import $ from 'jquery';
-import { UrlProcessor } from './sampreq_url_processor';
-
-/**
- * Prism is the syntax highlighting lib
- */
 import Prism from 'prismjs';
 import 'prismjs/components/prism-json';
+import { UrlProcessor } from './sampreq_url_processor';
 
 /**
  * Initialize event listeners for sample request buttons, enabling the send and clear functionality.
@@ -29,6 +25,7 @@ function initSampleRequest() {
     const group = root.data('group');
     const name = root.data('name');
     const version = root.data('version');
+
     sendSampleRequest(group, name, version, $(this).data('type'));
   });
 
@@ -40,6 +37,7 @@ function initSampleRequest() {
     const group = root.data('group');
     const name = root.data('name');
     const version = root.data('version');
+
     clearSampleRequest(group, name, version);
   });
 }
@@ -74,6 +72,7 @@ function getHydratedUrl(root, queryParameters) {
   // Convert {param} form to :param
   // TODO check if this is necessary, do we have urls with {param} in it?
   const url = convertPathParams(dryUrl);
+
   return UrlProc.hydrate(url, queryParameters);
 }
 
@@ -95,14 +94,17 @@ function getHydratedUrl(root, queryParameters) {
  */
 function collectValues(root) {
   const parameters = {};
+
   ['header', 'query', 'body'].forEach(family => {
     // key: parameter name (e.g. 'id'), value: the content of the input
     const inputValues = {};
+
     // look for all parameters
     try {
       root.find($(`[data-family="${family}"]:visible`)).each((index, el) => {
         const name = el.dataset.name;
         let value = el.value;
+
         // special case for checkbox, we look at the checked property
         if (el.type === 'checkbox') {
           if (el.checked) {
@@ -115,6 +117,7 @@ function collectValues(root) {
         }
         if (!value && !el.dataset.optional && el.type !== 'checkbox') {
           $(el).addClass('border-danger');
+
           return true;
         }
         inputValues[name] = value;
@@ -126,6 +129,7 @@ function collectValues(root) {
   });
   // find the json body
   const bodyJson = root.find($('[data-family="body-json"]'));
+
   // load it if it's visible
   if (bodyJson.is(':visible')) {
     parameters.body = bodyJson.val();
@@ -133,6 +137,7 @@ function collectValues(root) {
   } else {
     parameters.header['Content-Type'] = 'multipart/form-data';
   }
+
   return parameters;
 }
 
@@ -155,6 +160,7 @@ function sendSampleRequest(group, name, version, method) {
 
   // build the object that will be passed to jquery's ajax function
   const requestParams = {};
+
   // assign the hydrated url
   requestParams.url = getHydratedUrl(root, parameters.query);
 
@@ -167,6 +173,7 @@ function sendSampleRequest(group, name, version, method) {
     requestParams.data = parameters.body;
   } else if (requestParams.headers['Content-Type'] === 'multipart/form-data') {
     const formData = new FormData();
+
     // Note: here we don't try to handle nested fields for form-data because it doesn't make sense
     // if you need to send non-flat data, use json, not form-data which is a flat key/value structure
     for (const [name, value] of Object.entries(parameters.body)) {
@@ -202,6 +209,7 @@ function sendSampleRequest(group, name, version, method) {
    */
   function displaySuccess(data, status, jqXHR) {
     let jsonResponse;
+
     try {
       jsonResponse = JSON.parse(jqXHR.responseText);
       jsonResponse = JSON.stringify(jsonResponse, null, 4);
@@ -222,6 +230,7 @@ function sendSampleRequest(group, name, version, method) {
   function displayError(jqXHR, textStatus, error) {
     let message = 'Error ' + jqXHR.status + ': ' + error;
     let jsonResponse;
+
     try {
       jsonResponse = JSON.parse(jqXHR.responseText);
       jsonResponse = JSON.stringify(jsonResponse, null, 4);
@@ -271,6 +280,7 @@ function clearSampleRequest(group, name, version) {
 
   // restore default URL
   const $urlElement = root.find('.sample-request-url');
+
   $urlElement.val($urlElement.prop('defaultValue'));
 }
 

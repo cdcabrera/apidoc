@@ -112,7 +112,7 @@ const locales = {
  */
 const lang = (window.navigator.language ?? 'en-GB').toLowerCase().substr(0, 2);
 
-let locale = locales[lang] ? locales[lang] : locales.en;
+let locale = locales[lang] || locales.en;
 
 /**
  * Translates given text based on current locale settings.
@@ -122,9 +122,11 @@ let locale = locales[lang] ? locales[lang] : locales.en;
  */
 function __(text) {
   const index = locale[text];
+
   if (index === undefined) {
     return text;
   }
+
   return index;
 }
 
