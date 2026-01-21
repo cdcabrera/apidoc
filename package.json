@@ -74,7 +74,7 @@
     "winston": "^3.17.0"
   },
   "devDependencies": {
-    "@cdcabrera/eslint-config-toolkit": "^0.3.0",
+    "@cdcabrera/eslint-config-toolkit": "^0.4.0",
     "@types/lodash": "^4.17.20",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.9.1",
