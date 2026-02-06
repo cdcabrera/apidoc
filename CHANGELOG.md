@@ -1,5 +1,25 @@
 # apiDoc Changelog
 
+## [3.0.5](https://github.com/cdcabrera/apidoc/compare/b44fd8673d3a34c6fbed92e8195ffc7b7f7f9c75...231391de9e06b7dd4c11eae5791f29a43e4769a6) (2026-02-06)
+
+
+### Continuous Integrations
+*  npm publishing, remove matrix ([#112](https://github.com/cdcabrera/apidoc/pull/112)) ([cbe8779](https://github.com/cdcabrera/apidoc/commit/cbe8779807d4d93ebfc4f8c84a0981179b362d57))
+
+### Builds
+* **deps** lock update ([#118](https://github.com/cdcabrera/apidoc/pull/118)) ([231391d](https://github.com/cdcabrera/apidoc/commit/231391de9e06b7dd4c11eae5791f29a43e4769a6))
+* **deps-dev** bump dev group with 2 updates ([#117](https://github.com/cdcabrera/apidoc/pull/117)) ([89de763](https://github.com/cdcabrera/apidoc/commit/89de7631da86ed28f7cecf44893e4bd85233f126))
+* **deps-dev** bump changelog-light from 3.0.4 to 3.0.5 ([#113](https://github.com/cdcabrera/apidoc/pull/113)) ([c9c1d3e](https://github.com/cdcabrera/apidoc/commit/c9c1d3ea70857826f0c264d8954de49b8114843f))
+* **deps-dev** bump dev group with 2 updates ([#107](https://github.com/cdcabrera/apidoc/pull/107)) ([6cc5e3d](https://github.com/cdcabrera/apidoc/commit/6cc5e3d9f41274e47f6105e7167ec3deaad2fee0))
+* **deps** bump prod group with 3 updates ([#111](https://github.com/cdcabrera/apidoc/pull/111)) ([4fd1f0e](https://github.com/cdcabrera/apidoc/commit/4fd1f0e8bd020406c672835d600176aa00e46ffd))
+* **deps** bump actions/cache from 4 to 5 ([#110](https://github.com/cdcabrera/apidoc/pull/110)) ([c5ac3e4](https://github.com/cdcabrera/apidoc/commit/c5ac3e46ec300839e7dce4c39f59f5b57e65ea54))
+* **deps** bump actions/checkout from 5 to 6 ([#109](https://github.com/cdcabrera/apidoc/pull/109)) ([6b1a19c](https://github.com/cdcabrera/apidoc/commit/6b1a19c04873c88945f88fdcdb71d01a2e1a3f12))
+* **deps** bump glob from 11.0.3 to 13.0.0 ([#105](https://github.com/cdcabrera/apidoc/pull/105)) ([7bddd4d](https://github.com/cdcabrera/apidoc/commit/7bddd4d273bb3d3456b19ba7a3ae35ff3992a0e7))
+* **deps-dev** migrate to eslint-config-toolkit ([#103](https://github.com/cdcabrera/apidoc/pull/103)) ([583be04](https://github.com/cdcabrera/apidoc/commit/583be04b6d64adc433d0c17688d3243deeac25d7))
+* **deps** bump prod group with 2 updates ([#96](https://github.com/cdcabrera/apidoc/pull/96)) ([4a8ac0f](https://github.com/cdcabrera/apidoc/commit/4a8ac0f81ec10e3155b98ae340a1e1eb2391a880))
+* **deps-dev** bump dev group with 7 updates ([#102](https://github.com/cdcabrera/apidoc/pull/102)) ([3983d51](https://github.com/cdcabrera/apidoc/commit/3983d519acc818097e3bec553dc2d5234a88da40))
+*  relax audit check ([#100](https://github.com/cdcabrera/apidoc/pull/100)) ([b26ed00](https://github.com/cdcabrera/apidoc/commit/b26ed0083b104ff85a5e7d2aa82c7b89a62d8d10))
+
 ## [3.0.4](https://github.com/cdcabrera/apidoc/compare/a2e108e0f0653fa6b794fb8a627629db11e2f759...ca8d61fc03c26d7c16a9ec8812b0cd783200a1f1) (2025-11-10)
 
 
