@@ -1,5 +1,17 @@
 # apiDoc Changelog
 
+## [3.0.6](https://github.com/cdcabrera/apidoc/compare/e82e0ef29009cb0946582187a53343ba476ab64e...8e54c60908a13363fa5de77fce7a73d4973d2181) (2026-03-06)
+
+
+### Builds
+* **deps** lock update ([#128](https://github.com/cdcabrera/apidoc/pull/128)) ([8e54c60](https://github.com/cdcabrera/apidoc/commit/8e54c60908a13363fa5de77fce7a73d4973d2181))
+* **deps** bump glob from 13.0.2 to 13.0.5 ([#127](https://github.com/cdcabrera/apidoc/pull/127)) ([069fab4](https://github.com/cdcabrera/apidoc/commit/069fab473ccbe56ba42dbf58b73001c1478f5ca9))
+* **deps** bump prod group with 4 updates ([#125](https://github.com/cdcabrera/apidoc/pull/125)) ([fc0cb3f](https://github.com/cdcabrera/apidoc/commit/fc0cb3f57949318d8ff54cd6b122d491dae44217))
+* **deps** bump glob from 13.0.0 to 13.0.1 ([#124](https://github.com/cdcabrera/apidoc/pull/124)) ([7737e85](https://github.com/cdcabrera/apidoc/commit/7737e8546f386b172a6be0219c4fe4fc1c5ac8d3))
+* **deps-dev** bump dev group with 2 updates ([#121](https://github.com/cdcabrera/apidoc/pull/121)) ([7fc03c0](https://github.com/cdcabrera/apidoc/commit/7fc03c07f28fdd9fe4947c775dbbc5b6f7f56999))
+* **deps** bump iconv-lite from 0.7.1 to 0.7.2 ([#116](https://github.com/cdcabrera/apidoc/pull/116)) ([8b35c20](https://github.com/cdcabrera/apidoc/commit/8b35c20552a636b9f27652878d88d7fe7e9de4f0))
+* **deps-dev** bump cspell from 9.6.0 to 9.6.2 ([#120](https://github.com/cdcabrera/apidoc/pull/120)) ([e789969](https://github.com/cdcabrera/apidoc/commit/e789969b5fcb8f0e5eeea74d303edc52f90936ae))
+
 ## [3.0.5](https://github.com/cdcabrera/apidoc/compare/b44fd8673d3a34c6fbed92e8195ffc7b7f7f9c75...231391de9e06b7dd4c11eae5791f29a43e4769a6) (2026-02-06)
 
 
