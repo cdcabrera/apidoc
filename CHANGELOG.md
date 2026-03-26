@@ -1,5 +1,14 @@
 # apiDoc Changelog
 
+## [3.0.7](https://github.com/cdcabrera/apidoc/compare/6e98ada34383b2e4cb2e102ee3502fb2220712ef...7dc019cd973d00c45397a8fe8e78f23aea8f5622) (2026-03-26)
+
+
+### Builds
+* **deps-dev** bump eslint from 9.39.2 to 9.39.4 ([#136](https://github.com/cdcabrera/apidoc/pull/136)) ([7dc019c](https://github.com/cdcabrera/apidoc/commit/7dc019cd973d00c45397a8fe8e78f23aea8f5622))
+* **deps** lock update ([#135](https://github.com/cdcabrera/apidoc/pull/135)) ([d5ea902](https://github.com/cdcabrera/apidoc/commit/d5ea902ff67491e68776b76d9a6a92c06b925878))
+* **deps-dev** bump dev group with 3 updates ([#134](https://github.com/cdcabrera/apidoc/pull/134)) ([7a4cbee](https://github.com/cdcabrera/apidoc/commit/7a4cbee23ecf48d627e422107d69729908e408e2))
+* **deps** bump prod group with 3 updates ([#133](https://github.com/cdcabrera/apidoc/pull/133)) ([2afaf10](https://github.com/cdcabrera/apidoc/commit/2afaf10f9749b4cf076d7de2a223effd33708821))
+
 ## [3.0.6](https://github.com/cdcabrera/apidoc/compare/e82e0ef29009cb0946582187a53343ba476ab64e...8e54c60908a13363fa5de77fce7a73d4973d2181) (2026-03-06)
 
 
