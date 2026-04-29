@@ -1,5 +1,14 @@
 # apiDoc Changelog
 
+## [3.0.8](https://github.com/cdcabrera/apidoc/compare/468f5a889da44ccb34bfc734a0606782ac69942a...8982786e7e1bbb4b6b33a8d14f8be0c401c3ce18) (2026-04-29)
+
+
+### Builds
+* **deps** bump prod group with 2 updates ([#143](https://github.com/cdcabrera/apidoc/pull/143)) ([8982786](https://github.com/cdcabrera/apidoc/commit/8982786e7e1bbb4b6b33a8d14f8be0c401c3ce18))
+* **deps-dev** bump dev group with 2 updates ([#142](https://github.com/cdcabrera/apidoc/pull/142)) ([88e868f](https://github.com/cdcabrera/apidoc/commit/88e868fb81856eb876d924f1d5708529bb415d4c))
+* **deps** bump esbuild from 0.27.3 to 0.27.4 ([#139](https://github.com/cdcabrera/apidoc/pull/139)) ([5d66624](https://github.com/cdcabrera/apidoc/commit/5d6662481b79bca6ee7ea41ea4a17a357533efd2))
+* **deps** lock update ([#138](https://github.com/cdcabrera/apidoc/pull/138)) ([b1a4371](https://github.com/cdcabrera/apidoc/commit/b1a4371beea768470c681907ba0063af7e0f8dcf))
+
 ## [3.0.7](https://github.com/cdcabrera/apidoc/compare/6e98ada34383b2e4cb2e102ee3502fb2220712ef...7dc019cd973d00c45397a8fe8e78f23aea8f5622) (2026-03-26)
 
 
