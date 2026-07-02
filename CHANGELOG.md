@@ -1,5 +1,26 @@
 # apiDoc Changelog
 
+## [4.0.0](https://github.com/cdcabrera/apidoc/compare/bab7a1313ab9456e36c86c9bfe35c6c22484401b...c309f35d565c4bbd2a4426bb7f31d2a93a3e4916) (2026-07-02)
+⚠ **BREAKING CHANGES**
+* Node.js 20 support has been removed. See [#147](https://github.com/cdcabrera/apidoc/pull/147)
+* Pin dependencies. See [#166](https://github.com/cdcabrera/apidoc/pull/166)
+
+### Continuous Integrations
+*  workflow perms ([#149](https://github.com/cdcabrera/apidoc/pull/149)) ([0f9c7db](https://github.com/cdcabrera/apidoc/commit/0f9c7db58c81218692e520131ebae36b03a49ad4))
+
+### Builds
+* **deps** lock update ([#167](https://github.com/cdcabrera/apidoc/pull/167)) ([c309f35](https://github.com/cdcabrera/apidoc/commit/c309f35d565c4bbd2a4426bb7f31d2a93a3e4916))
+* ⚠  pin deps, ignore scripts ([#166](https://github.com/cdcabrera/apidoc/pull/166)) ([0f33ec6](https://github.com/cdcabrera/apidoc/commit/0f33ec6f1f3bee815c93810391d780862f31701f))
+* **deps** bump prod group with 2 updates ([#163](https://github.com/cdcabrera/apidoc/pull/163)) ([b353232](https://github.com/cdcabrera/apidoc/commit/b353232e230efc8f45174629f7a293a4f79abecb))
+* **deps-dev** bump cspell from 9.7.0 to 10.0.1 ([#159](https://github.com/cdcabrera/apidoc/pull/159)) ([1289fca](https://github.com/cdcabrera/apidoc/commit/1289fca9b2789cd79b9a0b37ff180bda88e91c43))
+* **deps-dev** bump eslint from 9.39.4 to 10.5.0 ([#165](https://github.com/cdcabrera/apidoc/pull/165)) ([8608dab](https://github.com/cdcabrera/apidoc/commit/8608dab2bbadf23ce0a40143182dbd629603814c))
+* ⚠ **nodejs** remove 20 support ([#147](https://github.com/cdcabrera/apidoc/pull/147)) ([2c0c238](https://github.com/cdcabrera/apidoc/commit/2c0c23834853631cbf27d0fa88c190bc05cae9ab))
+* **deps** bump the prod group with 3 updates ([#157](https://github.com/cdcabrera/apidoc/pull/157)) ([aa807bd](https://github.com/cdcabrera/apidoc/commit/aa807bd481cf46d2da2b4b7ea84e74cbdaceee16))
+* **deps-dev** bump dev group with 2 updates ([#158](https://github.com/cdcabrera/apidoc/pull/158)) ([2aee8d7](https://github.com/cdcabrera/apidoc/commit/2aee8d7d051e980fd1dd40ca2f1c54a80172e653))
+* **deps** bump actions/setup-node from 6.3.0 to 6.4.0 ([#156](https://github.com/cdcabrera/apidoc/pull/156)) ([a87afa0](https://github.com/cdcabrera/apidoc/commit/a87afa0b5ae75addd226acfb1cfc9f5cfbcd65b5))
+* **deps** bump actions/checkout from 6 to 6.0.2 ([#155](https://github.com/cdcabrera/apidoc/pull/155)) ([f0c7d35](https://github.com/cdcabrera/apidoc/commit/f0c7d35115a621a82b13770f63467329fcf6fb1f))
+* **deps** bump actions/setup-node from 5 to 6.3.0 ([#148](https://github.com/cdcabrera/apidoc/pull/148)) ([3670817](https://github.com/cdcabrera/apidoc/commit/3670817e0945cc617726f622cb666287abfef343))
+
 ## [3.0.8](https://github.com/cdcabrera/apidoc/compare/468f5a889da44ccb34bfc734a0606782ac69942a...8982786e7e1bbb4b6b33a8d14f8be0c401c3ce18) (2026-04-29)
 
 
