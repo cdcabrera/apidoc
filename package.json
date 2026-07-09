@@ -70,7 +70,7 @@
     "markdown-it": "14.2.0",
     "nodemon": "3.1.14",
     "prismjs": "1.30.0",
-    "semver": "7.8.4",
+    "semver": "7.8.5",
     "winston": "3.17.0"
   },
   "devDependencies": {
