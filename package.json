@@ -80,7 +80,7 @@
     "@types/node": "^24.9.1",
     "changelog-light": "^3.0.8",
     "cspell": "^10.0.1",
-    "eslint": "^10.5.0",
+    "eslint": "^10.6.0",
     "mocha": "^11.7.6"
   }
 }
