@@ -1,5 +1,18 @@
 # apiDoc Changelog
 
+## [4.0.1](https://github.com/cdcabrera/apidoc/compare/9c0298e39348be311270989d0712efd2613ca6d7...5d5010307d0080e7c54eb744394d7b689331eefe) (2026-07-30)
+
+
+### Continuous Integrations
+*  remove dup workflow caching ([#175](https://github.com/cdcabrera/apidoc/pull/175)) ([5d50103](https://github.com/cdcabrera/apidoc/commit/5d5010307d0080e7c54eb744394d7b689331eefe))
+
+### Builds
+* **deps** bump the prod group with 3 updates ([#173](https://github.com/cdcabrera/apidoc/pull/173)) ([29178d3](https://github.com/cdcabrera/apidoc/commit/29178d3561474e7e15c714a36a15b5ebc5c5ba4d))
+* **deps-dev** bump @cdcabrera/eslint-config-toolkit ([#174](https://github.com/cdcabrera/apidoc/pull/174)) ([c6c623d](https://github.com/cdcabrera/apidoc/commit/c6c623d87990214548aed04eb999054272102bd0))
+* **deps-dev** bump eslint from 10.5.0 to 10.6.0 ([#171](https://github.com/cdcabrera/apidoc/pull/171)) ([3ebe790](https://github.com/cdcabrera/apidoc/commit/3ebe790b35e3dfe883e9acbf4fb1c9ae7b2b92bf))
+* **deps** bump actions/checkout from 6.0.2 to 7.0.0 ([#161](https://github.com/cdcabrera/apidoc/pull/161)) ([fd2c43d](https://github.com/cdcabrera/apidoc/commit/fd2c43d60622a34b8d90649ec93aeb7995da19a2))
+* **deps** bump semver from 7.8.4 to 7.8.5 ([#169](https://github.com/cdcabrera/apidoc/pull/169)) ([5babdce](https://github.com/cdcabrera/apidoc/commit/5babdcea1b142b2cc1cfe829b767a298075a66b6))
+
 ## [4.0.0](https://github.com/cdcabrera/apidoc/compare/bab7a1313ab9456e36c86c9bfe35c6c22484401b...c309f35d565c4bbd2a4426bb7f31d2a93a3e4916) (2026-07-02)
 ⚠ **BREAKING CHANGES**
 * Node.js 20 support has been removed. See [#147](https://github.com/cdcabrera/apidoc/pull/147)
