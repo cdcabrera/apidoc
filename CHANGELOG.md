@@ -1,5 +1,17 @@
 # apiDoc Changelog
 
+## [4.0.2](https://github.com/cdcabrera/apidoc/compare/0e66e2991337f01331393da7458a9fa7d2963136...c88689b7823eb8426effcac5753d2e59cd4a789f) (2026-08-30)
+
+
+### Builds
+* **deps** lock update ([#185](https://github.com/cdcabrera/apidoc/pull/185)) ([c88689b](https://github.com/cdcabrera/apidoc/commit/c88689b7823eb8426effcac5753d2e59cd4a789f))
+* **deps-dev** bump the dev group with 2 updates ([#184](https://github.com/cdcabrera/apidoc/pull/184)) ([11f4c23](https://github.com/cdcabrera/apidoc/commit/11f4c2348a9681f6dc65eaf57d3896dbfc5e4c5b))
+* **deps** bump the prod group with 2 updates ([#183](https://github.com/cdcabrera/apidoc/pull/183)) ([8a0ea32](https://github.com/cdcabrera/apidoc/commit/8a0ea32af5cf20753ab343da80e59300899de59c))
+* **deps-dev** bump eslint from 10.7.0 to 10.8.0 ([#180](https://github.com/cdcabrera/apidoc/pull/180)) ([8364fe3](https://github.com/cdcabrera/apidoc/commit/8364fe35d33724e5802a0028accd7075775277ac))
+* **deps-dev** bump dev group with 3 updates ([#179](https://github.com/cdcabrera/apidoc/pull/179)) ([eb775a0](https://github.com/cdcabrera/apidoc/commit/eb775a05c6fb63e94e284d33031529bc50a43c1a))
+* **deps** bump actions/setup-node from 6.4.0 to 7.0.0 ([#178](https://github.com/cdcabrera/apidoc/pull/178)) ([1e048ea](https://github.com/cdcabrera/apidoc/commit/1e048eaf2ebbd79d19a8802a28c8c20774d405fd))
+* **deps** bump actions/checkout from 7.0.0 to 7.0.1 ([#177](https://github.com/cdcabrera/apidoc/pull/177)) ([2cf363f](https://github.com/cdcabrera/apidoc/commit/2cf363f216c345ee9ff263bf1eb32ab057f99f35))
+
 ## [4.0.1](https://github.com/cdcabrera/apidoc/compare/9c0298e39348be311270989d0712efd2613ca6d7...5d5010307d0080e7c54eb744394d7b689331eefe) (2026-07-30)
 
 
