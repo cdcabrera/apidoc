@@ -1,5 +1,27 @@
 # apiDoc Changelog
 
+## [4.0.3](https://github.com/cdcabrera/apidoc/compare/be40da317764cc6f430db3e65c9cd5d04ee71528...f49b041d2571dc72b167b11d305525d0ba9437e3) (2026-10-28)
+
+
+### Builds
+* **deps** lock update ([#205](https://github.com/cdcabrera/apidoc/pull/205)) ([f49b041](https://github.com/cdcabrera/apidoc/commit/f49b041d2571dc72b167b11d305525d0ba9437e3))
+* **deps-dev** bump mocha from 11.8.0 to 12.0.3 ([#204](https://github.com/cdcabrera/apidoc/pull/204)) ([97589f0](https://github.com/cdcabrera/apidoc/commit/97589f06a9159c5c477979d72f97ecac103876b0))
+* **deps** bump markdown-it from 14.3.0 to 15.0.2 ([#196](https://github.com/cdcabrera/apidoc/pull/196)) ([cb9e072](https://github.com/cdcabrera/apidoc/commit/cb9e072eedbb0580783f4d7d21be21c57fc654c6))
+* **deps** bump klaw-sync from 7.0.0 to 8.0.0 ([#170](https://github.com/cdcabrera/apidoc/pull/170)) ([4aabc6f](https://github.com/cdcabrera/apidoc/commit/4aabc6fa6ec2acb05ae810d1e76adb956d60955a))
+* **deps** lock update ([#203](https://github.com/cdcabrera/apidoc/pull/203)) ([320d952](https://github.com/cdcabrera/apidoc/commit/320d952af16bd382975dd84273002fd038f028f1))
+* **deps** bump the prod group with 2 updates ([#202](https://github.com/cdcabrera/apidoc/pull/202)) ([2479551](https://github.com/cdcabrera/apidoc/commit/247955180f109e2a62e483809a9fe1e34de119ba))
+* **deps-dev** bump eslint from 10.11.0 to 10.12.0 ([#201](https://github.com/cdcabrera/apidoc/pull/201)) ([e47159e](https://github.com/cdcabrera/apidoc/commit/e47159ec4bb8a101da6ae8b7fc74116cf2dbbec9))
+* **deps-dev** bump cspell from 10.3.3 to 10.3.6 ([#200](https://github.com/cdcabrera/apidoc/pull/200)) ([8a49412](https://github.com/cdcabrera/apidoc/commit/8a4941226a13f60bf0d9fbad6c72f2630b34c5d3))
+* **deps-dev** bump the dev group with 2 updates ([#198](https://github.com/cdcabrera/apidoc/pull/198)) ([eb64e38](https://github.com/cdcabrera/apidoc/commit/eb64e38808485cd8c21b2e384dad525e4d2ce0af))
+* **deps** lock update ([#197](https://github.com/cdcabrera/apidoc/pull/197)) ([bdaae44](https://github.com/cdcabrera/apidoc/commit/bdaae443032c0157b0c03801d4af428c3a16af30))
+* **deps-dev** bump cspell from 10.3.0 to 10.3.3 ([#195](https://github.com/cdcabrera/apidoc/pull/195)) ([f62d8af](https://github.com/cdcabrera/apidoc/commit/f62d8af63dc2f8afe249f7caf34a27c3ea056e5a))
+* **deps-dev** bump the dev group with 2 updates ([#194](https://github.com/cdcabrera/apidoc/pull/194)) ([a562e67](https://github.com/cdcabrera/apidoc/commit/a562e676b0043f892ea0c1f1aac6466fad0b710f))
+* **deps** lock update ([#193](https://github.com/cdcabrera/apidoc/pull/193)) ([d10a398](https://github.com/cdcabrera/apidoc/commit/d10a39852f515e697c0610abc5401b96a8fbfa9d))
+* **deps-dev** bump cspell from 10.1.1 to 10.2.0 ([#191](https://github.com/cdcabrera/apidoc/pull/191)) ([fb82c83](https://github.com/cdcabrera/apidoc/commit/fb82c834381da6495d98a829f9bd0369a5bb519f))
+* **deps-dev** bump the dev group with 2 updates ([#190](https://github.com/cdcabrera/apidoc/pull/190)) ([7e92361](https://github.com/cdcabrera/apidoc/commit/7e923615f3e64414366d67d5c5dd2bdfaf43309d))
+* **deps-dev** bump changelog-light from 3.1.0 to 4.0.0 ([#188](https://github.com/cdcabrera/apidoc/pull/188)) ([93e791a](https://github.com/cdcabrera/apidoc/commit/93e791ad9b7b5b90b883aba6c05d02395b31b52d))
+*  align container apidoc, nodejs engine ([#187](https://github.com/cdcabrera/apidoc/pull/187)) ([0558cab](https://github.com/cdcabrera/apidoc/commit/0558cab9aee58677cacd68d962d573a2f3bc5f51))
+
 ## [4.0.2](https://github.com/cdcabrera/apidoc/compare/0e66e2991337f01331393da7458a9fa7d2963136...c88689b7823eb8426effcac5753d2e59cd4a789f) (2026-08-30)
 
 
