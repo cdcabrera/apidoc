@@ -1,5 +1,15 @@
 # apiDoc Changelog
 
+## [4.0.4](https://github.com/cdcabrera/apidoc/compare/906b5ed54535d28dd22770be49912f2381c1a845...051644fba947ef621e04df2f57501df255d1b48c) (2026-11-17)
+
+
+### Builds
+* **deps** lock update ([#212](https://github.com/cdcabrera/apidoc/pull/212)) ([051644f](https://github.com/cdcabrera/apidoc/commit/051644fba947ef621e04df2f57501df255d1b48c))
+* **deps** bump glob from 13.0.6 to 14.0.3 ([#211](https://github.com/cdcabrera/apidoc/pull/211)) ([a10a0af](https://github.com/cdcabrera/apidoc/commit/a10a0af0a67d32a49568e5a6412783f4f3937d23))
+* **deps** bump actions/setup-node from 7.0.0 to 7.1.0 ([#208](https://github.com/cdcabrera/apidoc/pull/208)) ([865d4bf](https://github.com/cdcabrera/apidoc/commit/865d4bf4affd79d74fca9a64d436847571e93f5c))
+* **deps-dev** bump the dev group with 2 updates ([#209](https://github.com/cdcabrera/apidoc/pull/209)) ([4509a3b](https://github.com/cdcabrera/apidoc/commit/4509a3b109be2d0bcd5bca92f10be0bb3f8267d1))
+* **deps** bump markdown-it from 15.0.2 to 15.0.3 ([#210](https://github.com/cdcabrera/apidoc/pull/210)) ([5f47ff7](https://github.com/cdcabrera/apidoc/commit/5f47ff7928afc215751f23ebe527627bd3c22034))
+
 ## [4.0.3](https://github.com/cdcabrera/apidoc/compare/be40da317764cc6f430db3e65c9cd5d04ee71528...f49b041d2571dc72b167b11d305525d0ba9437e3) (2026-10-28)
 
 
